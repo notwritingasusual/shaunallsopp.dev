@@ -7,7 +7,7 @@ function Header() {
             <img
                 src={profileImage}
                 alt="Shaun Allsopp"
-                className="w-20 h-35 border border-gray-300"
+                className="w-24 h-24 object-cover border border-gray-300"
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-lg font-bold font-mono text-[#556B2F]">
