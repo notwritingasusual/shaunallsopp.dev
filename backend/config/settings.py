@@ -84,6 +84,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Media files (User uploaded files)
 MEDIA_URL = '/media/'
@@ -96,5 +97,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://shaunallsopp.dev",
+    "https://www.shaunallsopp.dev",
 ]
+
+# Add your Vercel preview deployments if needed
+CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in development
 
