@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -8,11 +8,7 @@ function Fitness() {
     const [error, setError] = useState(null);
     const [days, setDays] = useState(90);
 
-    useEffect(() => {
-        fetchData();
-    }, [days]);
-
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             setLoading(true);
             const response = await axios.get(`http://localhost:8000/api/health/weight?days=${days}`);
@@ -23,7 +19,11 @@ function Fitness() {
             setLoading(false);
             console.error(err);
         }
-    };
+    }, [days]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
 
     if (loading) {
         return (
