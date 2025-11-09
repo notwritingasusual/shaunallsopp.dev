@@ -1,0 +1,27 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your global styles here */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 50px;
+}
+
+/* Custom Tailwind layers (optional) */
+@layer base {
+    h1 {
+        @apply text-2xl font-bold;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-blue-500 text-white px-4 py-2 rounded;
+    }
+}
