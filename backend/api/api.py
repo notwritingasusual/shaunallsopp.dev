@@ -24,6 +24,7 @@ class Project(Schema):
     id: int
     name: str
     description: str
+    languages: Optional[str]
     link: Optional[str]
     image: Optional[str]
     created_at: datetime
@@ -98,3 +99,46 @@ def update_project(request, project_id: int, payload: Project):
         setattr(project, attr, value)
     project.save()
     return project
+
+
+# Health Weight endpoints
+class HealthWeightOut(Schema):
+    date: str
+    weight: float
+    unit: str
+
+
+@api.get("/health/weight", response=List[HealthWeightOut])
+def get_weight_data(request, days: int = 90):
+    """Get weight data for last N days (default: 90)"""
+    from datetime import timedelta
+    from .models import HealthWeight
+    
+    cutoff = datetime.now().date() - timedelta(days=days)
+    weights = HealthWeight.objects.filter(date__gte=cutoff)
+    
+    return [
+        {
+            "date": w.date.strftime('%Y-%m-%d'),
+            "weight": float(w.weight),
+            "unit": w.unit
+        }
+        for w in weights
+    ]
+
+
+@api.get("/health/weight/all", response=List[HealthWeightOut])
+def get_all_weight_data(request):
+    """Get all weight data"""
+    from .models import HealthWeight
+    
+    weights = HealthWeight.objects.all()
+    
+    return [
+        {
+            "date": w.date.strftime('%Y-%m-%d'),
+            "weight": float(w.weight),
+            "unit": w.unit
+        }
+        for w in weights
+    ]

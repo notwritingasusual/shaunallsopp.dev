@@ -4,12 +4,14 @@ Quick reference for common Tailwind CSS classes used in this project.
 
 ## 📑 Quick Jump
 - [Grid Layout](#-grid-layout) - 2 column layouts, responsive grids
+- [Text Wrapping & Overflow](#-text-wrapping--overflow) - **NEW!** whitespace, break-words, truncate
 - [Responsive Breakpoints](#-responsive-design-breakpoints) - sm:, md:, lg:, xl:
 - [Flexbox](#-flexbox) - flex, justify, align, gap
 - [Spacing](#-spacing-margin--padding) - Margin & padding
 - [Colors & Borders](#-colors--shades) - Colors, shades, borders
 - [Font Sizes](#-font-sizes) - text-xs to text-9xl
 - [Width & Height](#-width--height) - Sizing elements
+- [Common Patterns](#-common-patterns-for-this-project) - Ready-to-use code snippets
 - [Common Mistakes](#-common-mistakes) - What to avoid
 
 ---
@@ -415,6 +417,140 @@ leading-loose   → 2
 
 ---
 
+## 📝 Text Wrapping & Overflow
+
+### Whitespace (Line Breaks & Spaces)
+```
+whitespace-normal    → Normal wrapping (default, collapses whitespace)
+whitespace-nowrap    → No wrapping, single line (text overflows)
+whitespace-pre       → Preserve all whitespace, no wrapping (like <pre>)
+whitespace-pre-line  → Preserve line breaks, wrap text ← Best for paragraphs/blog posts
+whitespace-pre-wrap  → Preserve all whitespace AND wrap text
+whitespace-break-spaces → Like pre-wrap but breaks spaces too
+```
+
+**Common Use Cases:**
+```jsx
+// Blog posts with paragraphs
+<p className="whitespace-pre-line">{post.content}</p>
+
+// Keep text on one line
+<span className="whitespace-nowrap">Don't break this</span>
+
+// Code blocks
+<pre className="whitespace-pre">const code = "formatted";</pre>
+```
+
+### Word Breaking (Prevent Overflow)
+```
+break-normal    → Normal word breaking (default)
+break-words     → Break words to prevent overflow ← Best for general use
+break-all       → Break anywhere, even mid-word ← Best for URLs/emails
+break-keep      → Don't break words (for CJK languages)
+```
+
+**When to Use:**
+```jsx
+// General text that might have long words
+<div className="break-words">
+  LongWordWithoutSpacesThatMightOverflow
+</div>
+
+// URLs, emails, or other non-breaking strings
+<a className="break-all" href={url}>{url}</a>
+
+// Keep important text together
+<span className="break-keep">Don't break this phrase</span>
+```
+
+### Text Overflow (Ellipsis)
+```
+truncate      → Single line with ... (overflow hidden + text-ellipsis + nowrap)
+text-ellipsis → Shows ... when text overflows
+text-clip     → Clips text without ...
+
+line-clamp-1  → Max 1 line with ...
+line-clamp-2  → Max 2 lines with ...
+line-clamp-3  → Max 3 lines with ...
+line-clamp-4  → Max 4 lines with ...
+line-clamp-5  → Max 5 lines with ...
+line-clamp-6  → Max 6 lines with ...
+line-clamp-none → Remove line clamping
+```
+
+**Examples:**
+```jsx
+// Single line with ellipsis
+<h2 className="truncate">Very long title that gets cut off...</h2>
+
+// Multi-line with ellipsis
+<p className="line-clamp-3">
+  Long description that will show max 3 lines and then...
+</p>
+
+// Title + description pattern
+<div>
+  <h3 className="font-bold truncate">{project.name}</h3>
+  <p className="text-sm line-clamp-2">{project.description}</p>
+</div>
+```
+
+### Overflow Control
+```
+overflow-auto     → Show scrollbar when needed
+overflow-hidden   → Hide overflow (cuts off content)
+overflow-visible  → Show overflow (default, can break layout)
+overflow-scroll   → Always show scrollbar
+
+overflow-x-auto   → Horizontal scroll when needed
+overflow-y-auto   → Vertical scroll when needed
+overflow-x-hidden → Hide horizontal overflow
+overflow-y-hidden → Hide vertical overflow
+```
+
+**Common Patterns:**
+```jsx
+// Prevent text from breaking layout
+<div className="overflow-hidden break-words">
+
+// Scrollable container
+<div className="overflow-auto max-h-64">
+
+// Hide overflow completely
+<div className="overflow-hidden">
+```
+
+### Complete Text Overflow Solution
+```jsx
+// Blog post card (prevents all overflow issues)
+<div className="border p-4 break-words overflow-hidden">
+  <h2 className="text-lg font-bold truncate mb-2">
+    {post.title}
+  </h2>
+  <p className="text-sm text-gray-600 line-clamp-3 whitespace-pre-line mb-2">
+    {post.content}
+  </p>
+  <a href={post.link} className="text-blue-600 text-sm break-all hover:underline">
+    {post.link}
+  </a>
+</div>
+
+// Project card (grid layout)
+<div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+  {projects.map(project => (
+    <div key={project.id} className="border p-4 break-words overflow-hidden">
+      <h3 className="font-bold truncate">{project.name}</h3>
+      <p className="text-sm line-clamp-2">{project.description}</p>
+      <a href={project.link} className="text-sm text-blue-600 break-all block">
+        {project.link}
+      </a>
+    </div>
+  ))}
+</div>
+```
+
+---
+
 ## 🎨 Background
 
 ### Background Color
@@ -655,6 +791,55 @@ disabled: → :disabled
 </div>
 ```
 
+### Blog Post Card (With Overflow Protection)
+```jsx
+<div className="border border-gray-300 p-4 break-words overflow-hidden">
+  <h2 className="text-lg font-bold truncate mb-2">
+    {post.title}
+  </h2>
+  <p className="text-sm text-gray-600 line-clamp-3 whitespace-pre-line mb-2">
+    {post.content}
+  </p>
+  <span className="text-xs text-gray-400">
+    {new Date(post.created_at).toLocaleDateString()}
+  </span>
+</div>
+```
+
+### Project Card (Grid with Links)
+```jsx
+{projects.map(project => (
+  <div key={project.id} className="border border-gray-300 p-4 break-words overflow-hidden">
+    <h3 className="font-bold truncate mb-2">{project.name}</h3>
+    <p className="text-sm text-gray-600 line-clamp-2 mb-2">
+      {project.description}
+    </p>
+    <a 
+      href={project.link} 
+      className="text-sm text-blue-600 hover:underline break-all block"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {project.link}
+    </a>
+  </div>
+))}
+```
+
+### Responsive 2-Column Blog Grid
+```jsx
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {posts.map(post => (
+    <div key={post.id} className="border p-4 break-words overflow-hidden">
+      <h2 className="text-xl font-bold mb-2">{post.title}</h2>
+      <p className="text-sm text-gray-600 whitespace-pre-line">
+        {post.content}
+      </p>
+    </div>
+  ))}
+</div>
+```
+
 ---
 
 ## 🚫 Common Mistakes
@@ -667,6 +852,9 @@ disabled: → :disabled
 - `inline-flex flex-row` without `flex-wrap` → Items won't wrap to new rows
 - `grid-cols-2 md:grid-cols-2` → Redundant! Both do the same thing
 - Using trailing slashes in API URLs → `/api/blog/` should be `/api/blog`
+- Forgetting `break-words` → Text overflows containers
+- Not using `whitespace-pre-line` → Blog posts ignore line breaks
+- Long URLs without `break-all` → URLs overflow boxes
 
 ✅ **Do:**
 - Use semantic class names

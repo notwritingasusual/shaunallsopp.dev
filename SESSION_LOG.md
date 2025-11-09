@@ -263,5 +263,399 @@ Access at: http://localhost:3000
 
 ---
 
-**Session Date:** November 9, 2025
-**Status:** Header component complete and working ✅
+## Session 2: API Cleanup, Apple Health Integration, Styling (Nov 9, 2025)
+
+### 🧹 Backend API Cleanup
+
+#### Fixed .env Configuration Issues
+**Problems Found:**
+- `python-dotenv` was not installed (causing import errors)
+- Missing `Pillow` library (required for ImageField)
+- Incorrect imports in `urls.py` (leftover `ninja_api` reference)
+
+**Solutions:**
+- Installed `python-dotenv==1.2.1`
+- Installed `Pillow==12.0.0`
+- Cleaned up `config/urls.py` to only use `api` from `api.api`
+- Updated `requirements.txt` with all dependencies
+
+#### Cleaned Up Models & API
+**Problem:** Confusion between Blog and Message models
+
+**Solution:**
+- Renamed `Blog` model → `BlogPost`
+- Deleted `Message` model (was confused with blog posts)
+- Created proper CRUD endpoints for BlogPost:
+  - `GET /api/blog` - List all posts
+  - `GET /api/blog/{id}` - Get single post
+  - `POST /api/blog` - Create post
+  - `PUT /api/blog/{id}` - Update post
+  - `DELETE /api/blog/{id}` - Delete post
+
+**Key Learning:** Django Ninja does NOT use trailing slashes!
+- ✅ Use: `/api/blog`
+- ❌ Don't use: `/api/blog/`
+
+#### Added Projects Model & API
+- Created `Projects` model (name, description, link, image)
+- Added to admin interface
+- Created API endpoints for projects
+
+---
+
+### 🏋️ Apple Health Weight Graph Integration
+
+#### Created Complete System for Health Data
+**Files Created:**
+1. `backend/parse_health_data.py` - Python script to extract weight from Apple Health XML
+2. `backend/api/models.py` - Added `HealthWeight` model
+3. `backend/api/api.py` - Added health weight API endpoints
+4. `backend/api/management/commands/load_weight_data.py` - Django command to import data
+5. `APPLE_HEALTH_SETUP.md` - Complete step-by-step guide
+
+**Models Added:**
+```python
+class HealthWeight(models.Model):
+    date = models.DateField(unique=True)
+    weight = models.DecimalField(max_digits=5, decimal_places=2)
+    unit = models.CharField(max_length=10, default='kg')
+    created_at = models.DateTimeField(auto_now_add=True)
+```
+
+**API Endpoints:**
+- `GET /api/health/weight?days=90` - Get weight data for last N days
+- `GET /api/health/weight/all` - Get all weight data
+
+**Workflow:**
+1. Export health data from iPhone Health app
+2. Parse XML: `python parse_health_data.py export.xml`
+3. Load into Django: `python manage.py load_weight_data weight_data.json`
+4. Display in React with Recharts
+
+**What "Parse" Means:**
+- **Parse** = Read and extract structured data from a file
+- The XML file has thousands of lines → parser extracts ONLY weight data
+- Creates clean JSON: `[{"date": "2025-11-09", "weight": 80.5, "unit": "kg"}]`
+
+---
+
+### ⚛️ React Components Created/Updated
+
+#### Fitness Component (Complete with Graph)
+**Location:** `frontend/src/components/Fitness.jsx`
+
+**Features:**
+- Interactive line chart using Recharts library
+- Time period selector buttons (30 days, 90 days, 6 months, 1 year)
+- Statistics display (current, average, min, max)
+- 2-column grid layout (like blog posts)
+- Personal Records (PR's) section with placeholders
+- Responsive design (mobile + desktop)
+
+**Layout:**
+```
+Desktop:
+┌──────────────────┬──────────────────┐
+│ Weight Progress  │ Personal Records │
+│ [Graph + Stats]  │ - Bench Press    │
+│                  │ - Squat          │
+│                  │ - Deadlift       │
+│                  ├──────────────────┤
+│                  │ Placeholder      │
+└──────────────────┴──────────────────┘
+
+Mobile: Stacked vertically
+```
+
+**Installed:** `npm install recharts`
+
+#### Other Components
+- **Header.jsx** - Profile + tech stack
+- **Blog.jsx** - Displays blog posts in 2-column grid
+- **Projects.jsx** - Displays projects in 4-column grid with images
+- **GetInTouch.jsx** - Contact section
+
+---
+
+### 🎨 Styling & Design Updates
+
+#### Added Olive Green Color Theme
+**Color:** `#556B2F` (Dark Olive Green)
+
+**Applied to:**
+- All section headings (shaun, journal, projects, contact, fitness)
+- Tech keywords in header (Python, MySQL, JavaScript, HTML, CSS, TailwindCSS) - made bold + green
+- All links (email, project links) - green with hover underline
+- Fitness graph line and dots
+
+**Before:** Black headings, blue links
+**After:** Olive green headings, olive green links, professional earthy aesthetic
+
+#### Text Overflow Solutions
+**Problems Fixed:**
+- Text running outside box borders
+- Long URLs breaking layout
+- Blog posts ignoring line breaks
+
+**Solutions Applied:**
+```jsx
+// Prevent overflow
+<div className="border p-4 break-words overflow-hidden">
+
+// Respect paragraphs in blog posts
+<p className="whitespace-pre-line">{post.content}</p>
+
+// Break URLs properly
+<a className="break-all">{project.link}</a>
+
+// Truncate long titles
+<h2 className="truncate">{title}</h2>
+
+// Multi-line with ellipsis
+<p className="line-clamp-3">{description}</p>
+```
+
+#### Images in Projects
+**Added:**
+- Project images display at top of card
+- Full width, fixed height (h-48 / 192px)
+- `object-cover` for proper cropping
+- Conditional rendering (only if image exists)
+- Proper spacing and borders
+
+---
+
+### 📚 Documentation Created
+
+#### TAILWIND_CHEATSHEET.md
+**Major Update - Added:**
+1. **Grid Layout Section**
+   - `grid-cols-1` through `grid-cols-12`
+   - Grid rows, auto-flow, gap
+   - Common patterns with examples
+
+2. **Text Wrapping & Overflow Section** (NEW!)
+   - Whitespace classes (normal, nowrap, pre, pre-line, pre-wrap)
+   - Word breaking (break-words, break-all, break-keep)
+   - Text overflow with ellipsis (truncate, line-clamp-1 to 6)
+   - Overflow control (hidden, auto, visible, scroll)
+   - Complete examples for blog posts, project cards
+
+3. **Enhanced Responsive Breakpoints**
+   - Full table with device types
+   - Visual timeline showing how breakpoints work
+   - Key concept: `md:` means "medium AND UP" (not mobile only)
+   - Mobile-first approach explained
+
+4. **Common Patterns Section**
+   - Blog post card (with overflow protection)
+   - Project grid with links
+   - Responsive 2-column grid
+
+5. **Updated Common Mistakes**
+   - Added grid mistakes
+   - Added text overflow issues
+   - Added API trailing slash note
+
+#### APPLE_HEALTH_SETUP.md (NEW!)
+**Complete guide with:**
+- Step-by-step iPhone export process
+- Python parser script usage
+- Django migration and data import
+- React component code with Recharts
+- API endpoint documentation
+- Troubleshooting section
+- Privacy considerations
+
+#### API_REFERENCE.md
+**Created comprehensive API docs:**
+- All BlogPost endpoints (CRUD)
+- Health weight endpoints
+- React/JavaScript examples
+- cURL examples
+- Common mistakes section
+
+---
+
+### 🔧 Key Technical Learnings
+
+#### Django Ninja vs Trailing Slashes
+- Django Ninja does NOT use trailing slashes (unlike DRF)
+- `/api/blog` works ✅
+- `/api/blog/` returns 404 ❌
+
+#### DateTime Serialization
+- Schema field must be `datetime` not `str`
+- Fixed: `created_at: datetime` in Pydantic schemas
+
+#### Responsive Grid Breakpoints
+- `md:` = ≥768px (tablets, laptops, desktops) - NOT mobile
+- Mobile-first: base class applies to all, prefix applies to that size UP
+- `grid grid-cols-1 md:grid-cols-2` = 1 col mobile, 2 cols desktop
+
+#### Text Overflow Formula
+```jsx
+<div className="break-words overflow-hidden">
+  <h2 className="truncate">{title}</h2>
+  <p className="whitespace-pre-line">{content}</p>
+  <a className="break-all">{url}</a>
+</div>
+```
+
+---
+
+### 📁 Current File Structure
+
+```
+shaunallsopp.dev/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Header.jsx          # Profile + tech stack (olive green keywords)
+│   │   │   ├── Blog.jsx            # 2-col grid, blog posts
+│   │   │   ├── Projects.jsx        # 4-col grid, with images
+│   │   │   ├── Fitness.jsx         # Weight graph + PR's (2-col layout)
+│   │   │   └── GetInTouch.jsx      # Contact section
+│   │   ├── assets/
+│   │   │   └── profile.jpeg        # Profile picture
+│   │   └── App.js                  # Main app component
+│   └── package.json                # Added: recharts
+│
+├── backend/
+│   ├── api/
+│   │   ├── models.py               # BlogPost, Projects, HealthWeight
+│   │   ├── api.py                  # All API endpoints (Ninja)
+│   │   ├── admin.py                # Admin for all models
+│   │   └── management/commands/
+│   │       └── load_weight_data.py # Import health data
+│   ├── config/
+│   │   ├── settings.py             # .env, CORS, MEDIA config
+│   │   └── urls.py                 # Clean, fixed URLs
+│   ├── parse_health_data.py        # Apple Health XML parser
+│   └── requirements.txt            # python-dotenv, Pillow, etc.
+│
+├── TAILWIND_CHEATSHEET.md          # Comprehensive Tailwind reference
+├── APPLE_HEALTH_SETUP.md           # Health data integration guide
+├── API_REFERENCE.md                # API documentation
+└── SESSION_LOG.md                  # This file
+```
+
+---
+
+### 🎯 API Endpoints Summary
+
+```
+Health Check:
+GET  /api/health
+
+Blog Posts:
+GET    /api/blog              # List all
+GET    /api/blog/{id}         # Get one
+POST   /api/blog              # Create
+PUT    /api/blog/{id}         # Update
+DELETE /api/blog/{id}         # Delete
+
+Projects:
+GET    /api/projects          # List all
+GET    /api/projects/{id}     # Get one
+POST   /api/projects          # Create
+PUT    /api/projects/{id}     # Update
+
+Health Weight:
+GET    /api/health/weight?days=90    # Last N days
+GET    /api/health/weight/all        # All data
+
+Interactive Docs:
+GET    /api/docs              # Swagger UI
+```
+
+---
+
+### 🎨 Design System
+
+**Colors:**
+- **Primary:** Olive Green `#556B2F`
+- **Borders:** Gray 300 `#d1d5db`
+- **Text:** Gray 600 `#4b5563` (secondary)
+- **Background:** White
+
+**Typography:**
+- **Font:** Monospace (font-mono)
+- **Headings:** Bold, Olive Green
+- **Links:** Olive Green, hover underline
+
+**Layout:**
+- Border style: 1px solid gray-300
+- Padding: p-4, p-6, p-8
+- Gaps: gap-3, gap-4, gap-6
+- Grids: 1/2/4 columns responsive
+
+---
+
+## Current Status ✅
+
+### Backend
+- ✅ Django 5.2 running with Ninja API
+- ✅ .env configuration fixed
+- ✅ Models: BlogPost, Projects, HealthWeight
+- ✅ Admin interface configured
+- ✅ CORS configured for localhost:3000
+- ✅ Media files configured
+- ✅ All dependencies installed (python-dotenv, Pillow)
+
+### Frontend
+- ✅ React 18 with Tailwind CSS v3
+- ✅ Recharts for data visualization
+- ✅ All components created and styled
+- ✅ Responsive grid layouts
+- ✅ Olive green color theme
+- ✅ Text overflow handled properly
+- ✅ Images displaying in projects
+
+### Documentation
+- ✅ Comprehensive Tailwind cheat sheet
+- ✅ Apple Health integration guide
+- ✅ API reference documentation
+- ✅ Session logs up to date
+
+---
+
+## Running the Project
+
+**Backend:**
+```bash
+cd ~/shaunallsopp.dev/backend
+source venv/bin/activate
+python manage.py runserver
+```
+Access at: http://localhost:8000
+- Admin: http://localhost:8000/admin
+- API Docs: http://localhost:8000/api/docs
+
+**Frontend:**
+```bash
+cd ~/shaunallsopp.dev/frontend
+npm start
+```
+Access at: http://localhost:3000
+
+---
+
+## Next Steps (Ideas for Future Sessions)
+
+- [ ] Add real PR values to Fitness component
+- [ ] Create admin panel for easy content management
+- [ ] Add authentication for private health data
+- [ ] Build out the "Placeholder" section in Fitness
+- [ ] Add more blog posts and projects
+- [ ] Implement contact form functionality
+- [ ] Add pagination to blog/projects
+- [ ] Deploy to production (Vercel + Railway/Heroku)
+- [ ] Add SEO metadata
+- [ ] Set up CI/CD pipeline
+
+---
+
+**Session 1 Date:** November 9, 2025  
+**Session 2 Date:** November 9, 2025  
+**Status:** Fitness graph working, olive green theme applied, all components functional ✅

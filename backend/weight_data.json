@@ -1,0 +1,417 @@
+[
+  {
+    "date": "2020-06-27",
+    "weight": 80.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-03-02",
+    "weight": 72.5,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-04-18",
+    "weight": 69.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-05-02",
+    "weight": 68.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-05-16",
+    "weight": 67.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-05-24",
+    "weight": 68.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-05-31",
+    "weight": 66.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-06-04",
+    "weight": 67.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-06-08",
+    "weight": 68.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-06-13",
+    "weight": 67.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-06-17",
+    "weight": 68.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-06-21",
+    "weight": 68.8,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-06-27",
+    "weight": 68.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-02",
+    "weight": 67.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-05",
+    "weight": 68.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-11",
+    "weight": 68.2,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-16",
+    "weight": 67.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-20",
+    "weight": 68.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-25",
+    "weight": 69.2,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-07-30",
+    "weight": 67.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-03",
+    "weight": 69.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-08",
+    "weight": 68.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-12",
+    "weight": 68.5,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-16",
+    "weight": 68.8,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-22",
+    "weight": 68.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-27",
+    "weight": 68.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-08-31",
+    "weight": 68.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-09-05",
+    "weight": 68.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-09-13",
+    "weight": 68.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-09-19",
+    "weight": 69.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-09-24",
+    "weight": 68.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-10-03",
+    "weight": 69.5,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-10-07",
+    "weight": 69.2,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-10-11",
+    "weight": 69.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-10-17",
+    "weight": 69.5,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-10-22",
+    "weight": 69.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-10-31",
+    "weight": 68.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-11-08",
+    "weight": 70.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-11-16",
+    "weight": 70.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-11-28",
+    "weight": 69.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-12-07",
+    "weight": 70.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-12-17",
+    "weight": 70.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2024-12-30",
+    "weight": 70.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-01-09",
+    "weight": 71.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-01-18",
+    "weight": 72.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-01-31",
+    "weight": 70.5,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-02-06",
+    "weight": 70.8,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-02-20",
+    "weight": 70.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-03-01",
+    "weight": 70.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-03-07",
+    "weight": 71.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-03-15",
+    "weight": 71.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-03-24",
+    "weight": 70.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-04-03",
+    "weight": 71.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-04-16",
+    "weight": 70.2,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-05-02",
+    "weight": 70.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-05-12",
+    "weight": 70.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-05-16",
+    "weight": 70.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-05-19",
+    "weight": 70.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-05-29",
+    "weight": 69.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-06-04",
+    "weight": 70.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-06-11",
+    "weight": 70.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-06-16",
+    "weight": 70.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-06-20",
+    "weight": 69.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-06-25",
+    "weight": 69.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-07-01",
+    "weight": 69.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-07-07",
+    "weight": 70.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-07-14",
+    "weight": 69.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-07-24",
+    "weight": 70.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-07-28",
+    "weight": 70.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-08-06",
+    "weight": 70.1,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-08-13",
+    "weight": 69.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-08-24",
+    "weight": 67.8,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-08-30",
+    "weight": 68.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-09-04",
+    "weight": 69.4,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-09-10",
+    "weight": 69.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-09-18",
+    "weight": 69.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-09-24",
+    "weight": 69.9,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-09-29",
+    "weight": 69.7,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-10-10",
+    "weight": 69.8,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-10-21",
+    "weight": 70.3,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-10-26",
+    "weight": 70.6,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-10-31",
+    "weight": 70.0,
+    "unit": "kg"
+  },
+  {
+    "date": "2025-11-08",
+    "weight": 71.6,
+    "unit": "kg"
+  }
+]
