@@ -1,0 +1,24 @@
+[
+{
+  "model": "api.novels",
+  "pk": 1,
+  "fields": {
+    "title": "RED",
+    "author": "Shaun Allsopp",
+    "description": "Josh is haunted by a monster—not a literal one, but the darkness that lives within him. His twelve-year-old daughter Layla is on the run, tainted by the same demons that have plagued Josh for years. Set in the small town of Cherry Hill, this psychological thriller weaves between present-day struggles and the echoes of a traumatic past.\r\n\r\nAs Josh navigates his relationship with Layla after years of separation, he's simultaneously building a life with Charlotte, a primary school teacher from a well-off family who seems to offer him a chance at redemption. But when Charlotte becomes pregnant and a girl goes missing from town—just like the disappearances that scarred Cherry Hill ten years ago—Josh's carefully constructed new life begins to unravel.\r\n\r\nTold through shifting perspectives and timelines, RED explores themes of guilt, identity, and whether a person can truly escape their past. As secrets resurface and the line between victim and monster blurs, Josh must confront the truth about who he really is—and what he may have done.",
+    "cover_image": "novel_covers/Projectplaceholder.png",
+    "created_at": "2025-11-10T20:27:53.436Z"
+  }
+},
+{
+  "model": "api.novels",
+  "pk": 2,
+  "fields": {
+    "title": "Finding Effy",
+    "author": "Shaun Allsopp",
+    "description": "Description here.",
+    "cover_image": "novel_covers/Projectplaceholder_YUCnSI7.png",
+    "created_at": "2025-11-10T20:28:10.024Z"
+  }
+}
+]
