@@ -1,0 +1,50 @@
+[
+{
+  "model": "api.projects",
+  "pk": 1,
+  "fields": {
+    "name": "Placeholder Project #1",
+    "description": "Project description.",
+    "languages": "",
+    "link": "http://placeholder1.com",
+    "image": "project_images/261694-200_mMHO6bZ.png",
+    "created_at": "2025-11-09T16:36:31.175Z"
+  }
+},
+{
+  "model": "api.projects",
+  "pk": 2,
+  "fields": {
+    "name": "Project Placeholder #2",
+    "description": "Project description.",
+    "languages": "",
+    "link": "http://projectholder2.com",
+    "image": "project_images/261694-200.png",
+    "created_at": "2025-11-09T16:46:57.082Z"
+  }
+},
+{
+  "model": "api.projects",
+  "pk": 3,
+  "fields": {
+    "name": "clippyshaun",
+    "description": "An active clipboard clipper that runs in the background.",
+    "languages": "python, flask, javascript, react",
+    "link": "http://projectholder3.com",
+    "image": "project_images/Screenshot_2025-11-09_at_17.59.41.png",
+    "created_at": "2025-11-09T16:47:22.363Z"
+  }
+},
+{
+  "model": "api.projects",
+  "pk": 4,
+  "fields": {
+    "name": "The Fuselage",
+    "description": "An unofficial reimagining of the classic message board about the legendary TV show LOST.",
+    "languages": "python, django, mysql, javascript, react",
+    "link": "http://placeholder4.com",
+    "image": "project_images/Screenshot_2025-11-07_at_17.03.22.png",
+    "created_at": "2025-11-09T16:48:27.531Z"
+  }
+}
+]
