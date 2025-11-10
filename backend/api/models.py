@@ -42,21 +42,3 @@ class Projects(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-
-
-class HealthWeight(models.Model):
-    date = models.DateField(unique=True)
-    weight = models.DecimalField(max_digits=5, decimal_places=2)  # e.g., 123.45 kg
-    unit = models.CharField(max_length=10, default='kg')  # kg or lb
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return f"{self.date}: {self.weight} {self.unit}"
-    
-    class Meta:
-        ordering = ['date']
-        verbose_name = "Health Weight Record"
-        verbose_name_plural = "Health Weight Records"
-
-
-
