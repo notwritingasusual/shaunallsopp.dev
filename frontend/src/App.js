@@ -4,6 +4,8 @@ import GetInTouch from './components/GetInTouch';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Fitness from './components/Fitness';
+import Writing from './components/Writing';
+
 
 
 function App() {
@@ -18,6 +20,9 @@ function App() {
       </div>
       <div>
         <Projects />
+      </div>
+      <div>
+        <Writing />
       </div>
       <div>
         <GetInTouch />

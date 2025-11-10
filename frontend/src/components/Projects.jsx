@@ -34,7 +34,7 @@ class Projects extends React.Component {
 
         return (
             <div className="w-full items-start border-t border-gray-300 font-mono p-10 mt-10 break-words">
-                <h1 className="text-xl font-bold mb-4 text-[#556B2F]">projects</h1>
+                <h1 className="text-xl font-bold mb-4 text-[#556B2F]">web dev & coding projects</h1>
                 <ul>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
                         {projects.map(project => (

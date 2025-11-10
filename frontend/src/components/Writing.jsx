@@ -1,0 +1,87 @@
+import React from 'react';
+import axios from 'axios';
+
+class Writing extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            novels: [],
+            shortStories: [],
+        };
+    }
+
+    componentDidMount() {
+        this.fetchNovels();
+        this.fetchShortStories();
+    }
+
+    fetchNovels() {
+        axios.get('https://notwritingasusual.pythonanywhere.com/api/novels')
+            .then(response => {
+                this.setState({ novels: response.data });
+            })
+            .catch(error => {
+                console.error('There was an error fetching the novels!', error);
+            });
+    }
+
+    fetchShortStories() {
+        axios.get('https://notwritingasusual.pythonanywhere.com/api/shortstories')
+            .then(response => {
+                this.setState({ shortStories: response.data });
+            })
+            .catch(error => {
+                console.error('There was an error fetching the short stories!', error);
+            });
+    }
+
+    render() {
+        return (
+            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10 ">
+                <h2 className="text-xl font-bold mb-4 text-[#556B2F]">writing</h2>
+                <h2 className="text-base font-bold mb-4 text-[#556B2F]">novels</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {this.state.novels.map(novel => (
+                        <div key={novel.id} className="border border-gray-300 p-4 break-words overflow-hidden mb-2">
+                            <h3 className="text-base font-bold mb-2 text-[#556B2F]">{novel.title}</h3>
+                            {novel.cover_image && (
+                                <img
+                                    src={`https://notwritingasusual.pythonanywhere.com${novel.cover_image}`}
+                                    alt={novel.title}
+                                    className="w-20 h-20 object-cover mb-3"
+                                />
+                            )}
+                            <p className="text-sm font-bold mb-2 text-[#556B2F]">by {novel.author}</p>
+                            <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{novel.description}</p>
+                        </div>
+
+                    ))}
+
+                </div>
+
+                <h2 className="text-base font-bold mb-4 mt-4 text-[#556B2F]">short stories</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {this.state.shortStories.map(story => (
+                        <div key={story.id} className="border border-gray-300 p-4 break-words overflow-hidden mb-2">
+                            <h3 className="text-base font-bold mb-2 text-[#556B2F]">{story.title}</h3>
+                            {story.cover_image && (
+                                <img
+                                    src={`https://notwritingasusual.pythonanywhere.com${story.cover_image}`}
+                                    alt={story.title}
+                                    className="w-20 h-20 object-cover mb-3"
+                                />
+                            )}
+                            <p className="text-sm font-bold mb-2 text-[#556B2F]">by {story.author}</p>
+                            <p className="text-xs text-gray-600 mb-2 whitespace-pre-line">{story.description}</p>
+                        </div>
+
+                    ))}
+
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Writing;
+
