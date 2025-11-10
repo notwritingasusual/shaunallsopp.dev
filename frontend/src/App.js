@@ -8,7 +8,7 @@ import Fitness from './components/Fitness';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App p-0 lg:p-[50px]">
       <Header />
       <div>
         <Fitness />
