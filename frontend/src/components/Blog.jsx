@@ -5,7 +5,7 @@ const Blog = () => {
     const [posts, setPosts] = React.useState([]);
 
     React.useEffect(() => {
-        axios.get('http://localhost:8000/api/blog')
+        axios.get('https://notwritingasusual.pythonanywhere.com/api/blog')
             .then(response => {
                 setPosts(response.data);
             })

@@ -12,7 +12,7 @@ class Projects extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8000/api/projects')
+        axios.get('https://notwritingasusual.pythonanywhere.com/api/projects')
             .then(response => {
                 this.setState({ projects: response.data, loading: false });
             })
@@ -41,7 +41,7 @@ class Projects extends React.Component {
                             <li className="border border-gray-300 p-4 break-words overflow-hidden" key={project.id}>
                                 {project.image && (
                                     <img
-                                        src={`http://localhost:8000${project.image}`}
+                                        src={`https://notwritingasusual.pythonanywhere.com${project.image}`}
                                         alt={project.name}
                                         className="w-full h-48 object-cover mb-3"
                                     />
