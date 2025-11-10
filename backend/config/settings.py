@@ -101,6 +101,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.shaunallsopp.dev",
 ]
 
-# Add your Vercel preview deployments if needed
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in development
+# Allow Vercel preview deployments
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
 
