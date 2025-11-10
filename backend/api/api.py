@@ -29,7 +29,22 @@ class Project(Schema):
     image: Optional[str]
     created_at: datetime
 
+class Novel(Schema):
+    id: int
+    title: str
+    author: str
+    description: Optional[str]
+    cover_image: Optional[str]
+    created_at: datetime
 
+
+class ShortStory(Schema):
+    id: int
+    title: str
+    author: str
+    description: Optional[str]
+    cover_image: Optional[str]
+    created_at: datetime
 
 
 # Blog endpoints
@@ -142,3 +157,16 @@ def get_all_weight_data(request):
         }
         for w in weights
     ]
+
+@api.get("/novels", response=List[Novel])
+def list_novels(request):
+    """Get all novels"""
+    from .models import Novels
+    return Novels.objects.all()
+
+@api.get("/shortstories", response=List[ShortStory])
+def list_short_stories(request):
+    """Get all short stories"""
+    from .models import ShortStories
+    return ShortStories.objects.all()
+    

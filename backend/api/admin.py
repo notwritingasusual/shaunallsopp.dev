@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, Projects, HealthWeight
+from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories
 
 
 @admin.register(BlogPost)
@@ -23,3 +23,17 @@ class HealthWeightAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at']
     date_hierarchy = 'date'
     list_per_page = 50
+
+@admin.register(Novels)
+class NovelsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'author', 'created_at']
+    search_fields = ['title', 'author', 'description']
+    readonly_fields = ['created_at']
+    list_per_page = 20
+
+@admin.register(ShortStories)
+class ShortStoriesAdmin(admin.ModelAdmin):
+    list_display = ['title', 'author', 'created_at']
+    search_fields = ['title', 'author', 'description']
+    readonly_fields = ['created_at']
+    list_per_page = 20

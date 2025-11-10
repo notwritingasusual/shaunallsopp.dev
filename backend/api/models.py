@@ -42,3 +42,29 @@ class Projects(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+class Novels(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    cover_image = models.ImageField(upload_to='novel_covers/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']    
+
+class ShortStories(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    cover_image = models.ImageField(upload_to='short_story_covers/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']    
