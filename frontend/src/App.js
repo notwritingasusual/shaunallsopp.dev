@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
-import GetInTouch from './components/GetInTouch';
+import GetInTouchBottom from './components/GetInTouchBottom';
 import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Fitness from './components/Fitness';
@@ -25,7 +25,7 @@ function App() {
         <Writing />
       </div>
       <div>
-        <GetInTouch />
+        <GetInTouchBottom />
       </div>
       
       {/* Footer */}

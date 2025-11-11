@@ -1,6 +1,6 @@
 import React from 'react';
 
-class GetInTouch extends React.Component {
+class GetInTouchSide extends React.Component {
     render() {
         return (
             <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
@@ -43,4 +43,4 @@ class GetInTouch extends React.Component {
     }
 }
 
-export default GetInTouch;
+export default GetInTouchSide;
