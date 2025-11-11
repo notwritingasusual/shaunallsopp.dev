@@ -5,6 +5,7 @@ import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Fitness from './components/Fitness';
 import Writing from './components/Writing';
+import GetInTouchSide from './components/GetInTouchSide';
 
 
 
@@ -27,8 +28,6 @@ function App() {
       <div>
         <GetInTouchBottom />
       </div>
-      
-      {/* Footer */}
       <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-sm text-gray-600">
         © {new Date().getFullYear()} Shaun Allsopp. All rights reserved.
       </footer>
