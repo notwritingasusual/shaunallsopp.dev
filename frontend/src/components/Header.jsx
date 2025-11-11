@@ -5,7 +5,7 @@ import GetInTouchSide from './GetInTouchSide';
 
 function Header() {
     return (
-        <header className="w-full flex justify-start p-8 mb-10">
+        <header className="w-full flex justify-start pl-8 pr-8 pb-8 mb-10">
             <img
                 src={profileImage}
                 alt="Shaun Allsopp"
