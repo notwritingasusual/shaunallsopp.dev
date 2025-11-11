@@ -12,11 +12,11 @@ function Header() {
                 className="w-20 h-20 md:w-32 md:h-40 object-cover border border-gray-300"
             />
             <div className="flex flex-col ml-4">
-                <h1 className="text-lg font-bold font-mono text-[#556B2F]">
+                <h1 className="text-base font-bold font-mono text-[#556B2F]">
                     shaun
                 </h1>
-                <p className="text-base font-bold text-gray-600">
-                    Web App Developer: East Midlands, UK.
+                <p className="text-sm font-bold text-gray-600">
+                    {"{web app developer & writer}"} <span className="font-light">east midlands, uk.</span>
                 </p>
                 <p className="text-sm font-mono text-gray-600 pt-6">
                     Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">
