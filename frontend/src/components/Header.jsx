@@ -20,12 +20,11 @@ function Header() {
                 </p>
                 <p className="text-sm font-mono text-gray-600 pt-6">
                     Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">
-                        <span className="font-bold text-[#556B2F]">Python:</span>Django;
-                        <span className="font-bold text-[#556B2F]"> MySQL</span>;
+                        <span className="font-bold text-[#556B2F]">Python:</span>Django
+                        <span className="font-bold text-[#556B2F]">, MySQL</span>,
                         <span className="font-bold text-[#556B2F]"> JavaScript:</span>React;
                         <span className="font-bold text-[#556B2F]"> HTML</span>;
-                        <span className="font-bold text-[#556B2F]"> CSS</span>;
-                        <span className="font-bold text-[#556B2F]"> TailwindCSS</span>.
+                        <span className="font-bold text-[#556B2F]"> CSS</span>;TailwindCSS.
                     </p>
                 </p>
 
