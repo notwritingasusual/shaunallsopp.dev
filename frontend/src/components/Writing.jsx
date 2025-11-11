@@ -7,6 +7,8 @@ class Writing extends React.Component {
         this.state = {
             novels: [],
             shortStories: [],
+            loading: true,
+            error: null,
         };
     }
 
@@ -18,10 +20,11 @@ class Writing extends React.Component {
     fetchNovels() {
         axios.get('https://notwritingasusual.pythonanywhere.com/api/novels')
             .then(response => {
-                this.setState({ novels: response.data });
+                this.setState({ novels: response.data, loading: false });
             })
             .catch(error => {
                 console.error('There was an error fetching the novels!', error);
+                this.setState({ error: 'Failed to load writing content', loading: false });
             });
     }
 
@@ -32,10 +35,31 @@ class Writing extends React.Component {
             })
             .catch(error => {
                 console.error('There was an error fetching the short stories!', error);
+                this.setState({ error: 'Failed to load writing content', loading: false });
             });
     }
 
     render() {
+        const { loading, error } = this.state;
+
+        if (loading) {
+            return (
+                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
+                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">writing</h2>
+                    <p className="text-sm text-gray-600">Loading...</p>
+                </div>
+            );
+        }
+
+        if (error) {
+            return (
+                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
+                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">writing</h2>
+                    <p className="text-sm text-red-600">{error}</p>
+                </div>
+            );
+        }
+
         return (
             <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10 ">
                 <h2 className="text-xl font-bold mb-4 text-[#556B2F]">writing</h2>
@@ -72,7 +96,7 @@ class Writing extends React.Component {
                                 />
                             )}
                             <p className="text-sm font-bold mb-2 text-[#556B2F]">by {story.author}</p>
-                            <p className="text-xs text-gray-600 mb-2 whitespace-pre-line">{story.description}</p>
+                            <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{story.description}</p>
                         </div>
 
                     ))}
