@@ -3,7 +3,7 @@ import profileImage from '../assets/profile.jpeg';
 
 function Header() {
     return (
-        <header className="w-full flex justify-start p-8 mb-5">
+        <header className="w-full flex justify-start p-8 mb-10">
             <img
                 src={profileImage}
                 alt="Shaun Allsopp"
