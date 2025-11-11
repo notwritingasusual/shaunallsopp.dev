@@ -34,7 +34,6 @@ function Header() {
                 </p>
             </div>
             <div className="block md:hidden"><GetInTouchSide /></div>
-            <div className='hidden md:block'><GetInTouchSide /></div>
         </header>
     );
 }
