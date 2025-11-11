@@ -33,6 +33,7 @@ function Header() {
                     Available for employment (local or remote), freelance and collaborations.
                 </p>
             </div>
+            <div className="block md:hidden"><GetInTouchSide /></div>
             <div className='hidden md:block'><GetInTouchSide /></div>
         </header>
     );
