@@ -24,7 +24,7 @@ const Blog = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {posts.map(post => (
                         <div key={post.id} className="border border-gray-300 text-base p-4">
-                            <h2 className="font-bold mb-2 text-[#556B2F]">{post.title}</h2>
+                            <h2 className="font-bold mb-2 text-base text-[#556B2F]">{post.title}</h2>
                             <p className="font-bold mb-2 text-xs text-[#556B2F]">{new Date(post.created_at).toLocaleDateString()}</p>
                             <p className="whitespace-pre-wrap text-sm text-gray-600 mb-2">{post.content}</p>
                         </div>
