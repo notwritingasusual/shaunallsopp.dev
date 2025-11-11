@@ -10,7 +10,7 @@ import Writing from './components/Writing';
 
 function App() {
   return (
-    <div className="App p-0 lg:p-[50px]">
+    <div className="App p-0 lg:p-[50px] xl:p-[100px]">
       <Header />
       <div>
         <Fitness />
@@ -27,6 +27,11 @@ function App() {
       <div>
         <GetInTouch />
       </div>
+      
+      {/* Footer */}
+      <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-sm text-gray-600">
+        © {new Date().getFullYear()} Shaun Allsopp. All rights reserved.
+      </footer>
     </div>
   );
 }

@@ -15,10 +15,6 @@ body {
 
 /* Custom Tailwind layers (optional) */
 
-@body {
-    md: p-50px
-}
-
 @layer base {
     h1 {
         @apply text-2xl font-bold;
