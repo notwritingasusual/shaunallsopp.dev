@@ -5,7 +5,7 @@ import Blog from './components/Blog';
 import Projects from './components/Projects';
 import Fitness from './components/Fitness';
 import Writing from './components/Writing';
-import GetInTouchSide from './components/GetInTouchSide';
+
 
 
 

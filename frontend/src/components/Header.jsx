@@ -2,6 +2,7 @@ import React from 'react';
 import profileImage from '../assets/profile.jpeg';
 import GetInTouchSide from './GetInTouchSide';
 
+
 function Header() {
     return (
         <header className="w-full flex justify-start p-8 mb-10">
