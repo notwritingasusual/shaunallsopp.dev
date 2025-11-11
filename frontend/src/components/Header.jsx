@@ -13,7 +13,7 @@ function Header() {
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F] pt-1">
-                    shaun
+                    {"[shaun]"}
                 </h1>
                 <p className="text-sm font-bold text-gray-600">
                     {"{web app developer & writer}"} <span className="font-light">east midlands, uk.</span>

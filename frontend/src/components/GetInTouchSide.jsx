@@ -7,7 +7,7 @@ class GetInTouchSide extends React.Component {
 
 
                 <p className="text-sm font-mono text-gray-600 mb-4">
-                    email: <a href="mailto:shaunallsopp@outlook.com" className="text-[#556B2F] hover:underline text-sm font-bold">shaunallsopp@outlook.com</a>
+                    email: <a href="mailto:shaunallsopp@outlook.com" className="text-[#556B2F] hover:underline text-sm font-bold">{"[shaunallsopp@outlook.com]"}</a>
                 </p>
 
                 {/* Social Links */}

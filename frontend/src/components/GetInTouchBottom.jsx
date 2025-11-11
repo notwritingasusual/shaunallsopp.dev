@@ -9,7 +9,7 @@ class GetInTouchBottom extends React.Component {
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
                 </p>
                 <p className="text-sm font-mono text-gray-600 mb-4">
-                    email: <a href="mailto:shaunallsopp@outlook.com" className="text-[#556B2F] hover:underline text-sm font-bold">shaunallsopp@outlook.com</a>
+                    email: <a href="mailto:shaunallsopp@outlook.com" className="text-[#556B2F] hover:underline text-sm font-bold">{"[shaunallsopp@outlook.com]"}</a>
                 </p>
 
                 {/* Social Links */}
