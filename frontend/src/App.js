@@ -16,7 +16,7 @@ function App() {
         <Header />
 
         <Routes>
-          // home page
+          {/* home page */}
           <Route
             path="/"
             element={
@@ -43,7 +43,7 @@ function App() {
             }
           />
 
-         // link to full journal entries
+          {/* link to full journal entries */}
           <Route path="/FullJournal" element={<FullJournal />} />
         </Routes>
       </div>
