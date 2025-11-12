@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import EncryptedText from './EncryptedText';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
