@@ -40,7 +40,8 @@ class ShortStoriesAdmin(admin.ModelAdmin):
 
 @admin.register(WorkExperience)
 class WorkExperienceAdmin(admin.ModelAdmin):
-    list_display = ['position', 'company', 'start_date', 'end_date', 'created_at']
-    search_fields = ['position', 'company', 'description']
+    list_display = ['company', 'position', 'start_date', 'end_date', 'created_at']
+    search_fields = ['company', 'position', 'description']
     readonly_fields = ['created_at']
     list_per_page = 20
+
