@@ -68,32 +68,34 @@ class WorkExperience extends React.Component {
                     <div className="space-y-6">
                         {experiences.map(exp => (
                             <div key={exp.id} className="border border-gray-300 text-base p-4">
-                                <div className="flex items-start mb-2">
+                                <div className="flex items-start">
                                     {exp.logo ? (
                                         <img src={`${process.env.REACT_APP_API_URL}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />
                                     ) : (
                                         <div className="w-10 h-10 bg-gray-200 flex-shrink-0 mr-4"></div> // Fallback if no logo
                                     )}
-                                    <div className="flex-grow flex justify-between items-start">
-                                        <div>
+                                    <div className="flex-grow">
+                                        <div className="flex justify-between items-start">
                                             <h2 className="font-bold text-base text-[#556B2F]">{exp.position} at {exp.company}</h2>
+                                            <p className="font-bold text-xs text-gray-600 text-right">
+                                                {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
+                                            </p>
                                         </div>
-                                        <p className="font-bold text-xs text-gray-600 text-right">
-                                            {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
-                                        </p>
+                                        {exp.description && (
+                                            <div className="flex justify-between items-start mt-1">
+                                                {exp.showDescription && (
+                                                    <p className="whitespace-pre-wrap text-sm text-gray-600 mr-4">{exp.description}</p>
+                                                )}
+                                                <button
+                                                    onClick={() => this.toggleDescription(exp.id)}
+                                                    className="text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"
+                                                >
+                                                    {exp.showDescription ? '[- hide details]' : '[+ view details]'}
+                                                </button>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
-                                {exp.description && (
-                                    <button
-                                        onClick={() => this.toggleDescription(exp.id)}
-                                        className="text-xs text-[#556B2F] hover:underline focus:outline-none ml-14 mb-2" // Adjusted margin for alignment
-                                    >
-                                        {exp.showDescription ? '[- hide details]' : '[+ view details]'}
-                                    </button>
-                                )}
-                                {exp.showDescription && exp.description && (
-                                    <p className="whitespace-pre-wrap text-sm text-gray-600 mb-2">{exp.description}</p>
-                                )}
                             </div>
                         ))}
                     </div>
