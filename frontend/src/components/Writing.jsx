@@ -75,7 +75,6 @@ class Writing extends React.Component {
                                     className="w-20 h-20 object-cover mb-1"
                                 />
                             )}
-                            <p className="text-sm font-bold mb-2 text-[#556B2F]">by {novel.author}</p>
                             <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{novel.description}</p>
                         </div>
 
