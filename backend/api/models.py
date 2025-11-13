@@ -71,6 +71,7 @@ class ShortStories(models.Model):
 
 class WorkExperience(models.Model):
     company = models.CharField(max_length=200)
+    logo = models.ImageField(upload_to='company_logos/', blank=True, null=True)
     position = models.CharField(max_length=100)
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)  # null means currently working

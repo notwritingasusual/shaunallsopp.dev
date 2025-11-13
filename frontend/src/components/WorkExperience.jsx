@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import EncryptedText from './EncryptedText';
 
 class WorkExperience extends React.Component {
     constructor(props) {
@@ -69,19 +68,24 @@ class WorkExperience extends React.Component {
                     <div className="space-y-6">
                         {experiences.map(exp => (
                             <div key={exp.id} className="border border-gray-300 text-base p-4">
-                                <h2 className="grid grid-cols-2 font-bold mb-2 text-base text-[#556B2F]">{exp.position} at {exp.company}
-                                    <p className="text-xs md:text-sm justify-self-end">
-                                        {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ?
-                                            new Date(exp.end_date).toLocaleDateString() : 'Present'}</p></h2>
-
-
-
+                                <div className="flex items-start mb-2">
+                                    {/* Placeholder for Logo */}
+                                    <div className="w-10 h-10 bg-gray-200 flex-shrink-0 mr-4">
+                                        {/* You can replace this with an actual image if you add a logo field to your model */}
+                                    </div>
+                                    <div className="flex-grow">
+                                        <h2 className="font-bold text-base text-[#556B2F]">{exp.position} at {exp.company}</h2>
+                                        <p className="font-bold text-xs text-gray-600">
+                                            {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
+                                        </p>
+                                    </div>
+                                </div>
                                 {exp.description && (
                                     <button
                                         onClick={() => this.toggleDescription(exp.id)}
-                                        className="text-xs text-[#556B2F] hover:underline focus:outline-none mb-2"
+                                        className="text-xs text-[#556B2F] hover:underline focus:outline-none ml-14 mb-2" // Adjusted margin for alignment
                                     >
-                                        {exp.showDescription ? '[- hide]' : '[+ details]'}
+                                        {exp.showDescription ? '[- hide details]' : '[+ view details]'}
                                     </button>
                                 )}
                                 {exp.showDescription && exp.description && (

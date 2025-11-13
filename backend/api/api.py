@@ -73,6 +73,7 @@ class ShortStoryOut(Schema):
 
 class WorkExperienceIn(Schema):
     company: str
+    logo: Optional[str] = None
     position: str
     start_date: date
     end_date: Optional[date] = None
@@ -81,6 +82,7 @@ class WorkExperienceIn(Schema):
 class WorkExperienceOut(Schema):
     id: int
     company: str
+    logo: Optional[str]
     position: str
     start_date: date
     end_date: Optional[date]
