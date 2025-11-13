@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories
+from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories, WorkExperience
 
 
 @admin.register(BlogPost)
@@ -35,5 +35,12 @@ class NovelsAdmin(admin.ModelAdmin):
 class ShortStoriesAdmin(admin.ModelAdmin):
     list_display = ['title', 'author', 'created_at']
     search_fields = ['title', 'author', 'description']
+    readonly_fields = ['created_at']
+    list_per_page = 20
+
+@admin.register(WorkExperience)
+class WorkExperienceAdmin(admin.ModelAdmin):
+    list_display = ['position', 'company', 'start_date', 'end_date', 'created_at']
+    search_fields = ['position', 'company', 'description']
     readonly_fields = ['created_at']
     list_per_page = 20

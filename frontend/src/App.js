@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Fitness from './components/Fitness';
 import Writing from './components/Writing';
 import FullJournal from './components/FullJournal';
+import WorkExperience from './components/WorkExperience';
 
 
 function App() {
@@ -23,13 +24,16 @@ function App() {
             element={
               <>
                 <div>
-                  <Fitness />
+                  <Projects />
+                </div>
+                <div>
+                  <WorkExperience />
                 </div>
                 <div>
                   <Blog />
                 </div>
                 <div>
-                  <Projects />
+                  <Fitness />
                 </div>
                 <div>
                   <Writing />
