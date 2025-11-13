@@ -2,7 +2,7 @@ from ninja import NinjaAPI, Schema, Field
 from typing import List, Optional
 from datetime import datetime, date
 from django.shortcuts import get_object_or_404
-from .models import BlogPost, HealthWeight, Projects, Novels, ShortStories
+from .models import BlogPost, HealthWeight, Projects, Novels, ShortStories, WorkExperience
 
 api = NinjaAPI()
 
@@ -258,12 +258,6 @@ def delete_short_story(request, shortstory_id: int):
 def list_work_experiences(request):
     """Get all work experiences"""
     experiences = WorkExperience.objects.all()
-    return [
-        WorkExperienceIn(
-            company=exp.company,
-            position=exp.position,
-            start_date=exp.start_date,
-            end_date=exp.end_date,
-            description=exp.description
-        ) for exp in experiences
-    ]
+    return WorkExperience.objects.all()
+
+
