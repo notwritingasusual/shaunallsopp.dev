@@ -17,7 +17,7 @@ function Header() {
                     <EncryptedText text={"[shaun]"} />
                 </h1>
                 <p className="text-sm font-bold text-gray-600">
-                    <EncryptedText text={"{web app developer & writer}"} /> <span className="font-light">east midlands, uk.</span>
+                    <EncryptedText text={"{Web App Developer & Writer}"} /> <span className="font-light">East Midlands, UK.</span>
                 </p>
                 <p className="text-sm font-mono text-gray-600 pt-6">
                     Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">

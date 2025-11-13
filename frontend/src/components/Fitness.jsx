@@ -28,7 +28,7 @@ function Fitness() {
     if (loading) {
         return (
             <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4">fitness</h2>
+                <h2 className="text-xl font-bold mb-4">FITNESS</h2>
                 <div className="text-sm text-gray-600">Loading...</div>
             </section>
         );
@@ -37,8 +37,7 @@ function Fitness() {
     if (error) {
         return (
             <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4">fitness</h2>
-                <div className="text-sm text-red-600">{error}</div>
+                <h2 className="text-xl font-bold mb-4">FITNESS</h2>
             </section>
         );
     }
@@ -46,7 +45,7 @@ function Fitness() {
     if (data.length === 0) {
         return (
             <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4">fitness</h2>
+                <h2 className="text-xl font-bold mb-4">FITNESS</h2>
                 <div className="text-sm text-gray-600">No data available</div>
             </section>
         );
@@ -63,7 +62,7 @@ function Fitness() {
 
     return (
         <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-            <h2 className="text-xl font-bold font-capitalize mb-4 text-[#556B2F]">fitness</h2>
+            <h2 className="text-xl font-bold mb-4 text-[#556B2F]">FITNESS</h2>
 
             {/* 2-column grid layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">

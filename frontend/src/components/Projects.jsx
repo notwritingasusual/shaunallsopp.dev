@@ -29,7 +29,7 @@ function Projects() {
 
     return (
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-            <h1 className="text-xl font-bold mb-4 text-[#556B2F]">projects</h1>
+            <h1 className="text-xl font-bold mb-4 text-[#556B2F]">PROJECTS</h1>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {projects.map((project) => (
                     <ProjectsHoverCard key={project.id} project={project} />

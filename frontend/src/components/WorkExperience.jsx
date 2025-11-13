@@ -32,7 +32,7 @@ class WorkExperience extends React.Component {
         if (loading) {
             return (
                 <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">work experience</h2>
+                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-gray-600">Loading...</p>
                 </div>
             );
@@ -41,7 +41,7 @@ class WorkExperience extends React.Component {
         if (error) {
             return (
                 <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">work experience</h2>
+                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-red-600">{error}</p>
                 </div>
             );
@@ -49,7 +49,7 @@ class WorkExperience extends React.Component {
 
         return (
             <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h1 className="text-xl font-bold mb-4 text-[#556B2F]">work experience</h1>
+                <h1 className="text-xl font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
                 {experiences.length === 0 ? (
                     <p className="text-base font-mono text-sm text-gray-600 mb-2">No work experience available.</p>
                 ) : (
