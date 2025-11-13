@@ -16,7 +16,7 @@ class WorkExperience extends React.Component {
     }
 
     fetchWorkExperiences() {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/workexperience`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/work-experience`)
             .then(response => {
                 this.setState({ experiences: response.data, loading: false });
             })
