@@ -78,6 +78,15 @@ class WorkExperienceIn(Schema):
     end_date: Optional[date] = None
     description: Optional[str] = None
 
+class WorkExperienceOut(Schema):
+    id: int
+    company: str
+    position: str
+    start_date: date
+    end_date: Optional[date]
+    description: Optional[str]
+    created_at: datetime
+
 
 # Blog endpoints
 @api.get("/blog", response=List[BlogPostOut])
@@ -254,10 +263,8 @@ def delete_short_story(request, shortstory_id: int):
     short_story.delete()
     return {"success": True}
 
-@api.get("/workexperience", response=List[WorkExperienceIn])
-def list_work_experiences(request):
-    """Get all work experiences"""
-    experiences = WorkExperience.objects.all()
+@api.get("/work-experience", response=List[WorkExperienceOut])
+def list_work_experience(request):
+    """Get all work experience entries"""
     return WorkExperience.objects.all()
-
 
