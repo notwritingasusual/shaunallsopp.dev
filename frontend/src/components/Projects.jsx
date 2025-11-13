@@ -1,71 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import ProjectsHoverCard from './ProjectsHoverCard.jsx';
 
-class Projects extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            projects: [],
-            loading: true,
-            error: null,
-        };
-    }
+function Projects() {
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    componentDidMount() {
-        axios.get('https://notwritingasusual.pythonanywhere.com/api/projects')
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/api/projects`)
             .then(response => {
-                this.setState({ projects: response.data, loading: false });
+                setProjects(response.data);
+                setLoading(false);
             })
             .catch(error => {
-                this.setState({ error: error.message, loading: false });
+                setError(error);
+                setLoading(false);
             });
+    }, []);
+
+    if (loading) {
+        return <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10 text-sm text-gray-600">Loading...</div>;
     }
 
-    render() {
-        const { projects, loading, error } = this.state;
+    if (error) {
+        return <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10 text-sm text-red-600">Error: {error.message}</div>;
+    }
 
-        if (loading) {
-            return <div>Loading...</div>;
-        }
-
-        if (error) {
-            return <div>Error: {error}</div>;
-        }
-
-        return (
-            <div className="w-full items-start border-t border-gray-300 font-mono p-10 mt-10 break-words">
-                <h1 className="text-xl font-bold mb-4 text-[#556B2F]">web dev & coding projects</h1>
-                <ul>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-                        {projects.map(project => (
-                            <li className="border border-gray-300 p-4 break-words overflow-hidden" key={project.id}>
-                                {project.image && (
-                                    <img
-                                        src={`https://notwritingasusual.pythonanywhere.com${project.image}`}
-                                        alt={project.name}
-                                        className="w-full h-48 object-cover mb-3"
-                                    />
-                                )}
-                                <h2 className="text-sm font-bold mb-2 text-[#556B2F]">{project.name}</h2>
-                                <p className="text-xs text-gray-600 mb-2 whitespace-pre-line">{project.description}</p>
-                                <p className="text-xs font-bold font-mono text-gray-600 mb-2">{project.languages}</p>
-                                {project.link && (
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-xs text-[#556B2F] hover:underline break-all block"
-                                    >
-                                        {project.link}
-                                    </a>
-                                )}
-                            </li>
-                        ))}
-                    </div>
-                </ul>
+    return (
+        <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
+            <h1 className="text-xl font-bold mb-4 text-[#556B2F]">projects</h1>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {projects.map((project) => (
+                    <ProjectsHoverCard key={project.id} project={project} />
+                ))}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-export default Projects;
+export default Projects;    

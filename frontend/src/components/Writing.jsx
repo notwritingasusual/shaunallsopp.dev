@@ -18,7 +18,7 @@ class Writing extends React.Component {
     }
 
     fetchNovels() {
-        axios.get('https://notwritingasusual.pythonanywhere.com/api/novels')
+        axios.get(`${process.env.REACT_APP_API_URL}/api/novels`)
             .then(response => {
                 this.setState({ novels: response.data, loading: false });
             })
@@ -29,7 +29,7 @@ class Writing extends React.Component {
     }
 
     fetchShortStories() {
-        axios.get('https://notwritingasusual.pythonanywhere.com/api/shortstories')
+        axios.get(`${process.env.REACT_APP_API_URL}/api/shortstories`)
             .then(response => {
                 this.setState({ shortStories: response.data });
             })
@@ -70,9 +70,9 @@ class Writing extends React.Component {
                             <h3 className="text-base font-bold mb-2 text-[#556B2F]">{novel.title}</h3>
                             {novel.cover_image && (
                                 <img
-                                    src={`https://notwritingasusual.pythonanywhere.com${novel.cover_image}`}
+                                    src={`${process.env.REACT_APP_API_URL}${novel.cover_image}`}
                                     alt={novel.title}
-                                    className="w-20 h-20 object-cover mb-3"
+                                    className="w-20 h-20 object-cover mb-1"
                                 />
                             )}
                             <p className="text-sm font-bold mb-2 text-[#556B2F]">by {novel.author}</p>
@@ -90,7 +90,7 @@ class Writing extends React.Component {
                             <h3 className="text-base font-bold mb-2 text-[#556B2F]">{story.title}</h3>
                             {story.cover_image && (
                                 <img
-                                    src={`https://notwritingasusual.pythonanywhere.com${story.cover_image}`}
+                                    src={`${process.env.REACT_APP_API_URL}${story.cover_image}`}
                                     alt={story.title}
                                     className="w-20 h-20 object-cover mb-3"
                                 />

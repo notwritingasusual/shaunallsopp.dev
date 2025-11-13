@@ -11,7 +11,7 @@ function Fitness() {
     const fetchData = useCallback(async () => {
         try {
             setLoading(true);
-            const response = await axios.get(`https://notwritingasusual.pythonanywhere.com/api/health/weight?days=${days}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/health/weight?days=${days}`);
             setData(response.data);
             setLoading(false);
         } catch (err) {

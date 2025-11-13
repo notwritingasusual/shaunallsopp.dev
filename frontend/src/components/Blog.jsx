@@ -6,7 +6,7 @@ const Blog = () => {
     const [posts, setPosts] = React.useState([]);
 
     React.useEffect(() => {
-        axios.get('https://notwritingasusual.pythonanywhere.com/api/blog')
+        axios.get(`${process.env.REACT_APP_API_URL}/api/blog`)
             .then(response => {
                 setPosts(response.data);
             })
@@ -18,7 +18,8 @@ const Blog = () => {
     return (
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
             <h1 className="text-xl font-bold mb-4 text-[#556B2F]">journal</h1>
-            <p className="text-sm font-mono text-gray-600 mb-6"><Link to="/FullJournal">[+ View more entries]</Link></p>
+            <p className="text-sm font-mono text-gray-600 mb-6"><Link to="/FullJournal">[+ view more entries]</Link></p>
+
             {posts.length === 0 ? (
 
                 <p className="text-base font-mono text-sm text-gray-600 mb-2">No blog posts available.</p>
@@ -30,6 +31,7 @@ const Blog = () => {
                             <p className="font-bold mb-2 text-xs text-[#556B2F]">{new Date(post.created_at).toLocaleDateString()}</p>
                             <p className="whitespace-pre-wrap text-sm text-gray-600 mb-2">{post.content}</p>
                         </div>
+
                     ))}
                 </div>
             )}
