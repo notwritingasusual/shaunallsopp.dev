@@ -11,7 +11,7 @@ function ProjectsHoverCard({ project }) {
             onMouseLeave={() => setShowPopup(false)}
         >
             <h2 className="text-sm font-bold mb-2 text-[#556B2F]">{project.name}</h2>
-            <p className="text-xs text-gray-600 mb-2 whitespace-pre-line">{project.description}</p>
+            <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{project.description}</p>
             <p className="text-xs font-bold font-mono text-gray-600 mb-2">{project.languages}</p>
             {project.link && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 underline">
