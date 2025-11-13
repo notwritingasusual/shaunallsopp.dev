@@ -63,7 +63,7 @@ function Fitness() {
 
     return (
         <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-            <h2 className="text-xl font-bold mb-4 text-[#556B2F]">fitness</h2>
+            <h2 className="text-xl font-bold font-capitalize mb-4 text-[#556B2F]">fitness</h2>
 
             {/* 2-column grid layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
