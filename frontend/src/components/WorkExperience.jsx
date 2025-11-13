@@ -69,13 +69,16 @@ class WorkExperience extends React.Component {
                         {experiences.map(exp => (
                             <div key={exp.id} className="border border-gray-300 text-base p-4">
                                 <div className="flex items-start mb-2">
-                                    {/* Placeholder for Logo */}
-                                    <div className="w-10 h-10 bg-gray-200 flex-shrink-0 mr-4">
-                                        {/* You can replace this with an actual image if you add a logo field to your model */}
-                                    </div>
-                                    <div className="flex-grow">
-                                        <h2 className="font-bold text-base text-[#556B2F]">{exp.position} at {exp.company}</h2>
-                                        <p className="font-bold text-xs text-gray-600">
+                                    {exp.logo ? (
+                                        <img src={`${process.env.REACT_APP_API_URL}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />
+                                    ) : (
+                                        <div className="w-10 h-10 bg-gray-200 flex-shrink-0 mr-4"></div> // Fallback if no logo
+                                    )}
+                                    <div className="flex-grow flex justify-between items-start">
+                                        <div>
+                                            <h2 className="font-bold text-base text-[#556B2F]">{exp.position} at {exp.company}</h2>
+                                        </div>
+                                        <p className="font-bold text-xs text-gray-600 text-right">
                                             {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
                                         </p>
                                     </div>
