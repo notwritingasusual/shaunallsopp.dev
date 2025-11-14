@@ -28,7 +28,7 @@ function Fitness() {
     if (loading) {
         return (
             <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4">FITNESS</h2>
+                <h2 className="text-base font-bold mb-4">FITNESS</h2>
                 <div className="text-sm text-gray-600">Loading...</div>
             </section>
         );
