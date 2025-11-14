@@ -14,10 +14,10 @@ function Header() {
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F] pt-1">
-                    <EncryptedText text={"[shaun]"} />
+                    <EncryptedText text="shaun" />
                 </h1>
                 <p className="text-sm font-bold text-gray-600">
-                    <EncryptedText text={"{Web App Developer & Writer}"} /> <span className="font-light">East Midlands, UK.</span>
+                    <EncryptedText text="Web App Developer & Writer" /> <span className="font-light">East Midlands, UK.</span>
                 </p>
                 <p className="text-sm font-mono text-gray-600 pt-6">
                     Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">

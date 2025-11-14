@@ -63,11 +63,11 @@ class Writing extends React.Component {
         return (
             <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10 ">
                 <h2 className="text-base font-bold mb-4 text-[#556B2F]">WRITING</h2>
-                <h2 className="text-sm font-light mb-4 text-[#556B2F]">novels</h2>
+                <h2 className="text-sm font-bold mb-4 text-[#556B2F]">novels</h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {this.state.novels.map(novel => (
                         <div key={novel.id} className="border border-gray-300 p-4 break-words overflow-hidden mb-2">
-                            <h3 className="text-base font-bold mb-2 text-[#556B2F]">{novel.title}</h3>
+                            <h3 className="text-sm font-bold mb-2 text-[#556B2F]">{novel.title}</h3>
                             {novel.cover_image && (
                                 <img
                                     src={`${process.env.REACT_APP_API_URL}${novel.cover_image}`}
@@ -82,7 +82,7 @@ class Writing extends React.Component {
 
                 </div>
 
-                <h2 className="text-sm font-light mb-4 mt-4 text-[#556B2F]">short stories</h2>
+                <h2 className="text-sm font-bold mb-4 mt-4 text-[#556B2F]">short stories</h2>
                 <div className="grid grid-cols-1 gap-4">
                     {this.state.shortStories.map(story => (
                         <div key={story.id} className="border border-gray-300 p-4 break-words overflow-hidden mb-2 flex items-start">
@@ -94,7 +94,7 @@ class Writing extends React.Component {
                                 />
                             )}
                             <div className="flex-grow">
-                                <h3 className="text-base font-bold mb-1 text-[#556B2F]">{story.title}</h3>
+                                <h3 className="text-sm font-bold mb-1 text-[#556B2F]">{story.title}</h3>
                                 <p className="text-sm text-gray-600 whitespace-pre-line">{story.description}</p>
                             </div>
                         </div>
