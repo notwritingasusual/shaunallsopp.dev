@@ -74,15 +74,15 @@ class WorkExperience extends React.Component {
                                     ) : (
                                         <div className="w-10 h-10 bg-gray-200 flex-shrink-0 mr-4"></div> // Fallback if no logo
                                     )}
-                                    <div className="flex-grow">
-                                        <div className="flex justify-between items-start">
+                                    <div className="md:flex-grow">
+                                        <div className="md:flex justify-between items-start">
                                             <h2 className="font-bold text-base text-[#556B2F]">{exp.position} at {exp.company}</h2>
                                             <p className="font-bold text-xs text-gray-600 text-right">
                                                 {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
                                             </p>
                                         </div>
                                         {exp.description && (
-                                            <div className="flex justify-between items-start mt-1">
+                                            <div className="md:flex justify-between items-start mt-1">
                                                 {exp.showDescription && (
                                                     <p className="mt-2 whitespace-pre-wrap text-sm text-gray-600 mr-4">{exp.description}</p>
                                                 )}
