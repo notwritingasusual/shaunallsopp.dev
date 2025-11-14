@@ -44,7 +44,7 @@ class WorkExperience extends React.Component {
         if (loading) {
             return (
                 <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
+                    <h2 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-gray-600">Loading...</p>
                 </div>
             );
