@@ -90,7 +90,7 @@ class WorkExperience extends React.Component {
                                                     onClick={() => this.toggleDescription(exp.id)}
                                                     className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"
                                                 >
-                                                    {exp.showDescription ? '[- hide details]' : '[+ view details]'}
+                                                    {exp.showDescription ? '[ - hide details]' : '[ + view details]'}
                                                 </button>
                                             </div>
                                         )}
