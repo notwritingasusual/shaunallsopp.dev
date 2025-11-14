@@ -17,7 +17,7 @@ const Blog = () => {
 
     return (
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-            <h1 className="text-xl font-bold mb-4 text-[#556B2F]">JOURNAL</h1>
+            <h1 className="text-base font-bold mb-4 text-[#556B2F]">JOURNAL</h1>
             <p className="mb-2 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
             {posts.length === 0 ? (
 
