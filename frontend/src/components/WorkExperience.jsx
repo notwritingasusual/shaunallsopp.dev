@@ -61,7 +61,7 @@ class WorkExperience extends React.Component {
 
         return (
             <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h1 className="text-xl font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
+                <h1 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
                 {experiences.length === 0 ? (
                     <p className="text-base text-sm text-gray-600 mb-2">No work experience available.</p>
                 ) : (
