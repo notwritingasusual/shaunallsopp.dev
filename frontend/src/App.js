@@ -50,7 +50,7 @@ function App() {
         {/*-------------------------------------------------------------*/}
 
 
-        <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-sm text-gray-600">
+        <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-xs text-gray-600">
           © {new Date().getFullYear()} Shaun Allsopp. All rights reserved.
         </footer>
       </div>
