@@ -82,13 +82,13 @@ class WorkExperience extends React.Component {
                                             </p>
                                         </div>
                                         {exp.description && (
-                                            <div className="md:flex md:justify-between md:items-start mt-1">
+                                            <div className="flex flex-col md:flex-row md:justify-between md:items-end mt-1">
                                                 {exp.showDescription && (
-                                                    <p className="mt-2 whitespace-pre-wrap text-sm text-gray-600 mr-4">{exp.description}</p>
+                                                    <p className="mt-2 whitespace-pre-wrap text-sm text-gray-600 md:mr-4">{exp.description}</p>
                                                 )}
                                                 <button
                                                     onClick={() => this.toggleDescription(exp.id)}
-                                                    className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"
+                                                    className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 md:self-end"
                                                 >
                                                     {exp.showDescription ? '[ - hide details]' : '[ + view details]'}
                                                 </button>
