@@ -68,7 +68,7 @@ class WorkExperience extends React.Component {
                     <div className="space-y-6">
                         {experiences.map(exp => (
                             <div key={exp.id} className="border border-gray-300 text-base p-4">
-                                <div className="mb-2 md:mb-0 md:flex md:items-start ">
+                                <div className="mb-3 md:mb-0 md:flex md:items-start ">
                                     {exp.logo ? (
                                         <img src={`${process.env.REACT_APP_API_URL}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />
                                     ) : (
@@ -77,7 +77,7 @@ class WorkExperience extends React.Component {
                                     <div className="md:flex-grow">
                                         <div className="md:flex md:justify-between md:items-start">
                                             <h2 className="font-bold text-base text-[#556B2F]">{exp.position} at {exp.company}</h2>
-                                            <p className="font-bold text-xs text-gray-600 md:text-right">
+                                            <p className="mb-2 md:mb-0 font-bold text-xs text-gray-600 md:text-right">
                                                 {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
                                             </p>
                                         </div>
