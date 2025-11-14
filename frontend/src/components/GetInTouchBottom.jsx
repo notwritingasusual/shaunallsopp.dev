@@ -4,7 +4,7 @@ class GetInTouchBottom extends React.Component {
     render() {
         return (
             <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4 text-[#556B2F]">CONTACT</h2>
+                <h2 className="text-base font-bold mb-4 text-[#556B2F]">CONTACT</h2>
                 <p className="text-base font-mono text-sm text-gray-600 mb-2">
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
                 </p>
