@@ -10,16 +10,16 @@ function Header() {
             <img
                 src={profileImage}
                 alt="Shaun Allsopp"
-                className="w-20 h-20 md:w-32 md:h-40 object-cover border border-gray-300"
+                className="w-20 h-20 md:w-32 md:h-40 xl:w-32 xl:h-40 object-cover border border-gray-300"
             />
             <div className="flex flex-col ml-4">
-                <h1 className="text-base font-bold font-mono text-[#556B2F] pt-1">
+                <h1 className="text-base font-bold font-mono text-[#556B2F]">
                     <EncryptedText text="shaun" />
                 </h1>
                 <p className="text-sm font-bold text-gray-600">
                     <EncryptedText text="Web App Developer & Writer" /> <span className="font-light">East Midlands, UK.</span>
                 </p>
-                <p className="text-sm font-mono text-gray-600 pt-6">
+                <p className="text-sm font-mono text-gray-600 pt-2">
                     Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">
                         <span className="font-bold text-[#556B2F]"><EncryptedText text="Python:" /></span>Django
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=", MySQL" /></span>,

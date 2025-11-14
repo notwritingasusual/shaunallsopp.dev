@@ -13,7 +13,7 @@ import WorkExperience from './components/WorkExperience';
 function App() {
   return (
     <Router>
-      <div className="App p-0 md:p-[50px] pt-[20px] lg:p-[70px] xl:p-[120px]">
+      <div className="App p-0 md:p-[50px] pt-[20px] lg:p-[60px] xl:p-[100px]">
         <Header />
 
         {/* ----------------------routing setup----------------------- */}
