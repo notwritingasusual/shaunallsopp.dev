@@ -88,7 +88,7 @@ class WorkExperience extends React.Component {
                                                 )}
                                                 <button
                                                     onClick={() => this.toggleDescription(exp.id)}
-                                                    className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 md:self-end"
+                                                    className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 self-start"
                                                 >
                                                     {exp.showDescription ? '[ - hide details]' : '[ + view details]'}
                                                 </button>
