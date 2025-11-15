@@ -84,7 +84,7 @@ class WorkExperience extends React.Component {
                                         {exp.description && (
                                             <div className="flex flex-col md:flex-row md:justify-between md:items-end mt-1">
                                                 {exp.showDescription && (
-                                                    <p className="mt-2 whitespace-pre-wrap text-sm text-gray-600 md:mr-4">{exp.description}</p>
+                                                    <p className="mt-2 mb-1 whitespace-pre-wrap text-sm text-gray-600 md:mr-4">{exp.description}</p>
                                                 )}
                                                 <button
                                                     onClick={() => this.toggleDescription(exp.id)}

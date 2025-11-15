@@ -10,7 +10,7 @@ function Header() {
             <img
                 src={profileImage}
                 alt="Shaun Allsopp"
-                className="w-20 h-20 md:w-32 md:h-40 xl:w-32 xl:h-40 object-cover border border-gray-300"
+                className="w-20 h-20 md:w-32 md:h-40 border border-gray-300"
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F]">
@@ -29,7 +29,7 @@ function Header() {
                     </p>
                 </p>
 
-                <p className="text-sm font-mono text-gray-600 pt-1">
+                <p className="text-sm font-mono text-gray-600 pt-1 xl:pt-2">
                     Available for employment (local or remote), freelance and collaborations.
                 </p>
             </div>
