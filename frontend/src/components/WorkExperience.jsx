@@ -43,7 +43,7 @@ class WorkExperience extends React.Component {
 
         if (loading) {
             return (
-                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
+                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
                     <h2 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-gray-600">Loading...</p>
                 </div>
@@ -52,22 +52,22 @@ class WorkExperience extends React.Component {
 
         if (error) {
             return (
-                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-                    <h2 className="text-xl font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
+                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
+                    <h2 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-red-600">{error}</p>
                 </div>
             );
         }
 
         return (
-            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
+            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
                 <h1 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
                 {experiences.length === 0 ? (
                     <p className="text-base text-sm text-gray-600 mb-2">No work experience available.</p>
                 ) : (
                     <div className="space-y-6">
                         {experiences.map(exp => (
-                            <div key={exp.id} className="border border-gray-300 text-base p-4">
+                            <div key={exp.id} className="border border-gray-300 text-base p-3">
                                 <div className="mb-3 md:mb-0 md:flex md:items-start ">
                                     {exp.logo ? (
                                         <img src={`${process.env.REACT_APP_API_URL}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />

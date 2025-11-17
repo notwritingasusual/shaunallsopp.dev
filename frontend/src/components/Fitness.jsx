@@ -27,7 +27,7 @@ function Fitness() {
 
     if (loading) {
         return (
-            <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
+            <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-8">
                 <h2 className="text-base font-bold mb-4">FITNESS</h2>
                 <div className="text-sm text-gray-600">Loading...</div>
             </section>
@@ -36,16 +36,16 @@ function Fitness() {
 
     if (error) {
         return (
-            <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4">FITNESS</h2>
+            <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-8">
+                <h2 className="text-base font-bold mb-4">FITNESS</h2>
             </section>
         );
     }
 
     if (data.length === 0) {
         return (
-            <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
-                <h2 className="text-xl font-bold mb-4">FITNESS</h2>
+            <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-8">
+                <h2 className="text-base font-bold mb-4">FITNESS</h2>
                 <div className="text-sm text-gray-600">No data available</div>
             </section>
         );
@@ -61,14 +61,14 @@ function Fitness() {
     };
 
     return (
-        <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-10">
+        <section className="w-full flex flex-col items-start border-t border-gray-300 font-mono p-8 mt-8">
             <h2 className="text-base font-bold mb-4 text-[#556B2F]">FITNESS</h2>
 
             {/* 2-column grid layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 
                 {/* Weight Progress Column */}
-                <div className="border border-gray-300 p-4 break-words overflow-hidden">
+                <div className="border border-gray-300 p-3 break-words overflow-hidden">
                     <h3 className="text-sm font-bold mb-4 text-[#556B2F]">weight</h3>
 
                     {/* Time period selector */}
@@ -107,19 +107,19 @@ function Fitness() {
                     <div className="grid grid-cols-2 gap-4 mb-6 w-full">
                         <div>
                             <div className="text-sm text-gray-600">current</div>
-                            <div className="text-base font-bold">{stats.latest} kg</div>
+                            <div className="text-sm font-bold">{stats.latest} kg</div>
                         </div>
                         <div>
                             <div className="text-sm text-gray-600">average</div>
-                            <div className="text-base font-bold">{stats.avg} kg</div>
+                            <div className="text-sm font-bold">{stats.avg} kg</div>
                         </div>
                         <div>
                             <div className="text-sm text-gray-600">min</div>
-                            <div className="text-base font-bold">{stats.min} kg</div>
+                            <div className="text-sm font-bold">{stats.min} kg</div>
                         </div>
                         <div>
                             <div className="text-sm text-gray-600">max</div>
-                            <div className="text-base font-bold">{stats.max} kg</div>
+                            <div className="text-sm font-bold">{stats.max} kg</div>
                         </div>
                     </div>
 
@@ -170,33 +170,33 @@ function Fitness() {
                 <div className="flex flex-col gap-4">
 
                     {/* Row 1: Personal Records */}
-                    <div className="border border-gray-300 p-4 break-words overflow-hidden">
+                    <div className="border border-gray-300 p-3 break-words overflow-hidden">
                         <h3 className="text-sm font-bold mb-4 text-[#556B2F]">personal records (pr's)</h3>
 
                         <div className="space-y-4">
                             <div>
                                 <div className="text-sm text-gray-600 mb-1">Bench Press</div>
-                                <div className="text-base font-bold">-- kg</div>
+                                <div className="text-sm font-bold">-- kg</div>
                             </div>
 
                             <div>
                                 <div className="text-sm text-gray-600 mb-1"></div>
-                                <div className="text-base font-bold">-- kg</div>
+                                <div className="text-sm font-bold">-- kg</div>
                             </div>
 
                             <div>
                                 <div className="text-sm text-gray-600 mb-1"></div>
-                                <div className="text-base font-bold">-- kg</div>
+                                <div className="text-sm font-bold">-- kg</div>
                             </div>
 
                             <div>
                                 <div className="text-sm text-gray-600 mb-1"></div>
-                                <div className="text-base font-bold">-- kg</div>
+                                <div className="text-sm font-bold">-- kg</div>
                             </div>
 
                             <div>
                                 <div className="text-sm text-gray-600 mb-1"></div>
-                                <div className="text-base font-bold">--:--</div>
+                                <div className="text-sm font-bold">--:--</div>
                             </div>
 
 
@@ -206,7 +206,7 @@ function Fitness() {
                     </div>
 
                     {/* Row 2: Placeholder */}
-                    <div className="border border-gray-300 p-4 break-words overflow-hidden">
+                    <div className="border border-gray-300 p-3 break-words overflow-hidden">
                         <h3 className="text-sm font-bold mb-4 text-[#556B2F]">placeholder</h3>
                         <p className="text-sm text-gray-600">
                             This is a placeholder section for future content.

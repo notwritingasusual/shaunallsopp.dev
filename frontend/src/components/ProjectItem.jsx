@@ -6,7 +6,7 @@ function ProjectItem({ project }) {
     return (
         <div
             key={project.id}
-            className="border border-gray-300 p-4 break-words overflow-hidden mb-2"
+            className="border border-gray-300 p-3 break-words overflow-hidden mb-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

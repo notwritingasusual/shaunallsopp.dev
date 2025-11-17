@@ -9,7 +9,7 @@ function Header() {
             <img
                 src="/assets/profile.jpeg"
                 alt="Shaun Allsopp"
-                className="w-12 h-12 rounded-md object-contain md:w-16 md:h-16 lg:w-20 lg:h-20"
+                className="w-12 h-12 rounded-md object-contain md:w-24 md:h-24 lg:w-28 lg:h-28"
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F]">
