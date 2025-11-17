@@ -5,11 +5,11 @@ import EncryptedText from './EncryptedText';
 
 function Header() {
     return (
-        <header className="w-full flex justify-start pt-6 pl-8 pr-8 pb-8 mb-10">
+        <header className="w-full flex justify-start pt-6 pl-8 pr-8 pb-6 mb-10">
             <img
                 src="/assets/profile.jpeg"
                 alt="Shaun Allsopp"
-                className="w-12 h-auto rounded-md object-cover md:w-16 lg:w-20 border border-gray-300"
+                className="w-12 h-auto rounded-md object-cover md:w-16 lg:w-20 border border-gray-300 p-0.5"
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F]">
