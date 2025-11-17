@@ -9,7 +9,7 @@ function Header() {
             <img
                 src="/assets/profile.jpeg"
                 alt="Shaun Allsopp"
-                className="w-20 h-20 md:w-32 md:h-40 lg:w-35 lg:h-48 border border-gray-300"
+                className="w-12 h-auto rounded-md object-cover md:w-16 lg:w-20 border border-gray-300"
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F]">
@@ -30,9 +30,7 @@ function Header() {
                     </p>
                 </p>
 
-                <p className="text-sm font-mono text-gray-600 pt-1 xl:pt-2">
-                    Available for employment (local or remote), freelance and collaborations.
-                </p>
+
             </div>
             <div className='hidden md:block'><GetInTouchSide /></div>
         </header>
