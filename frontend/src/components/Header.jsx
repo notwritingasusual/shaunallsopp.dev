@@ -23,7 +23,9 @@ function Header() {
                     Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">
                         <span className="font-bold text-[#556B2F]"><EncryptedText text="Python:" /></span>Django
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=", MySQL" /></span>,
-                        <span className="font-bold text-[#556B2F]"><EncryptedText text=" JavaScript:" /></span>React;
+                        <span className="font-bold text-[#556B2F]"><EncryptedText text="DRF;Ninja;FastAPI," /></span>
+
+                        <span className="font-bold text-[#556B2F]"><EncryptedText text=" JavaScript:" /></span>Next.js, React;
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=" HTML" /></span>;
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=" CSS" /></span>;TailwindCSS.
                     </p>
