@@ -13,7 +13,7 @@ import WorkExperience from './components/WorkExperience';
 function App() {
   return (
     <Router>
-      <div className="App p-0 md:p-[50px] pt-[20px] lg:p-[60px] xl:p-[100px]">
+      <div className="App p-0 md:p-[50px] pt-[20px] lg:p-[60px]">
         <Header />
 
         {/* ----------------------routing setup----------------------- */}
@@ -53,8 +53,8 @@ function App() {
         <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-xs text-gray-600">
           © {new Date().getFullYear()} Shaun Allsopp. All rights reserved.
         </footer>
-      </div>
-    </Router>
+      </div >
+    </Router >
   );
 }
 

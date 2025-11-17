@@ -1,5 +1,4 @@
 import React from 'react';
-import profileImage from '../assets/profile.jpeg';
 import GetInTouchSide from './GetInTouchSide';
 import EncryptedText from './EncryptedText';
 
@@ -8,9 +7,9 @@ function Header() {
     return (
         <header className="w-full flex justify-start pt-6 pl-8 pr-8 pb-8 mb-10">
             <img
-                src={profileImage}
+                src="/assets/profile.jpeg"
                 alt="Shaun Allsopp"
-                className="w-20 h-20 md:w-32 md:h-40 border border-gray-300"
+                className="w-20 h-20 md:w-32 md:h-40 lg:w-35 lg:h-48 border border-gray-300"
             />
             <div className="flex flex-col ml-4">
                 <h1 className="text-base font-bold font-mono text-[#556B2F]">
