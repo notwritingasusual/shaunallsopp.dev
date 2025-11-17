@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ProjectsHoverCard from './ProjectsHoverCard.jsx';
+import ProjectItem from './ProjectItem';
 
 function Projects() {
     const [projects, setProjects] = useState([]);
@@ -30,9 +30,9 @@ function Projects() {
     return (
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
             <h1 className="text-base font-bold mb-4 text-[#556B2F]">PROJECTS</h1>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-4">
                 {projects.map((project) => (
-                    <ProjectsHoverCard key={project.id} project={project} />
+                    <ProjectItem key={project.id} project={project} />
                 ))}
             </div>
         </div>

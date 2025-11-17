@@ -5,7 +5,7 @@ import EncryptedText from './EncryptedText';
 
 function Header() {
     return (
-        <header className="w-full flex justify-start pt-6 pl-8 pr-8 pb-6 mb-10">
+        <header className="w-full flex justify-start pt-6 pl-8 pr-8 pb-4 mb-10">
             <img
                 src="/assets/profile.jpeg"
                 alt="Shaun Allsopp"
