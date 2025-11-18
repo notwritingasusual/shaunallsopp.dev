@@ -15,17 +15,17 @@ function Header() {
                 <h1 className="text-base font-bold font-mono text-[#556B2F]">
                     <EncryptedText text="shaun" />
                 </h1>
-                <p className="text-sm font-bold text-gray-600">
+                <p className="text-sm font-bold text-gray-600 leading-snug">
                     <EncryptedText text="Web App Developer & Writer" /> <span className="font-light">East Midlands, UK.</span>
                 </p>
-                <p className="text-sm font-mono text-gray-600 pt-2">
-                    Building modern, performant web applications.     <p className="text-sm font-mono text-gray-600">
-                        <span className="font-bold text-[#556B2F]"><EncryptedText text="Python:" /></span>Django
+                <p className="text-sm font-mono text-gray-600 pt-2 leading-snug">
+                    Building modern, performant web applications. <p className="text-sm font-mono text-gray-600">
+                        <span className="font-bold text-[#556B2F]"><EncryptedText text="Tech Stack: Python:" /></span>Django
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=", MySQL" /></span>,
-                        <span className="font-bold text-[#556B2F]"><EncryptedText text="DRF;Ninja;FastAPI," /></span>
+                        <span className="font-bold text-[#556B2F]"><EncryptedText text="DRF;Ninja;" /></span>
 
-                        <span className="font-bold text-[#556B2F]"><EncryptedText text=" JavaScript:" /></span>Next.js, React;
-                        <span className="font-bold text-[#556B2F]"><EncryptedText text=" HTML" /></span>;
+                        <span className="font-bold text-[#556B2F]"><EncryptedText text=" JavaScript:" /></span>React;
+                        <span className="font-bold text-[#556B2F]"><EncryptedText text=" HTML5" /></span>;
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=" CSS" /></span>;TailwindCSS.
                     </p>
                 </p>

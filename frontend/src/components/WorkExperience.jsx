@@ -60,7 +60,7 @@ class WorkExperience extends React.Component {
         }
 
         return (
-            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
+            <div className="w-full items-startfont-mono p-8">
                 <h1 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
                 {experiences.length === 0 ? (
                     <p className="text-base text-sm text-gray-600 mb-2">No work experience available.</p>
@@ -84,7 +84,7 @@ class WorkExperience extends React.Component {
                                         {exp.description && (
                                             <div className="flex flex-col md:flex-row md:justify-between md:items-end mt-1">
                                                 {exp.showDescription && (
-                                                    <p className="mt-2 mb-1 whitespace-pre-wrap text-sm text-gray-600 md:mr-4">{exp.description}</p>
+                                                    <p className="mt-2 mb-1 whitespace-pre-wrap text-sm text-gray-600 md:mr-4 leading-snug">{exp.description}</p>
                                                 )}
                                                 <button
                                                     onClick={() => this.toggleDescription(exp.id)}

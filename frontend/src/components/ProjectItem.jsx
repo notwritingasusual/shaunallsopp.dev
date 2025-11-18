@@ -11,10 +11,10 @@ function ProjectItem({ project }) {
             onMouseLeave={() => setIsHovered(false)}
         >
             <h2 className="text-sm font-bold mb-2 text-[#556B2F]">{project.name}</h2>
-            <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{project.description}</p>
-            <p className="text-xs font-bold font-mono text-gray-600 mb-2">{project.languages}</p>
+            <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{project.description}</p>
+            <p className="text-xs font-bold font-mono leading-tight text-gray-600 mb-2">{project.languages}</p>
             {isHovered && project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-xs text-blue-600 underline">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="leading-tight text-xs text-blue-600 underline">
                     {project.link}
                 </a>
             )}

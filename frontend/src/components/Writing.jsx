@@ -61,7 +61,7 @@ class Writing extends React.Component {
         }
 
         return (
-            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8 ">
+            <div className="w-full items-start font-mono p-8">
                 <h2 className="text-base font-bold mb-4 text-[#556B2F]">WRITING</h2>
                 <h2 className="text-sm font-bold mb-4 text-[#556B2F]">novels</h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -75,7 +75,7 @@ class Writing extends React.Component {
                                     className="w-20 h-20 object-cover mb-1"
                                 />
                             )}
-                            <p className="text-xs text-gray-600 mb-2 whitespace-pre-line">{novel.description}</p>
+                            <p className="text-sm leading-snug text-gray-600 mb-2 whitespace-pre-line">{novel.description}</p>
                         </div>
 
                     ))}
@@ -95,7 +95,7 @@ class Writing extends React.Component {
                             )}
                             <div className="flex-grow">
                                 <h3 className="text-sm font-bold mb-1 text-[#556B2F]">{story.title}</h3>
-                                <p className="text-xs text-gray-600 whitespace-pre-line">{story.description}</p>
+                                <p className="text-sm text-gray-600 whitespace-pre-line leading-snug">{story.description}</p>
                             </div>
                         </div>
                     ))}
