@@ -75,7 +75,7 @@ class Writing extends React.Component {
                                     className="w-20 h-20 object-cover mb-1"
                                 />
                             )}
-                            <p className="text-sm leading-snug text-gray-600 mb-2 whitespace-pre-line">{novel.description}</p>
+                            <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{novel.description}</p>
                         </div>
 
                     ))}
