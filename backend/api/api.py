@@ -10,6 +10,7 @@ api = NinjaAPI()
 # Schemas for BlogPost
 class BlogPostIn(Schema):
     title: str
+    tags: Optional[str] = None
     content: str
     image: Optional[str] = None
 
@@ -17,8 +18,9 @@ class BlogPostIn(Schema):
 class BlogPostOut(Schema):
     id: int
     title: str
+    tags: Optional[str]
     content: str
-    image: Optional[str]
+    image: Optional[str] = None
     created_at: datetime
 
 
@@ -42,6 +44,7 @@ class ProjectOut(Schema):
 
 class NovelIn(Schema):
     title: str
+    genere: Optional[str] = None
     author: str
     description: Optional[str] = None
     cover_image: Optional[str] = None
@@ -50,6 +53,7 @@ class NovelIn(Schema):
 class NovelOut(Schema):
     id: int
     title: str
+    genere: Optional[str]
     author: str
     description: Optional[str]
     cover_image: Optional[str]
@@ -101,6 +105,11 @@ def list_blog_posts(request):
 def get_blog_post(request, post_id: int):
     """Get a specific blog post by ID"""
     return get_object_or_404(BlogPost, id=post_id)
+
+@api.get("/tags/{tag}", response=List[BlogPostOut])
+def get_blog_posts_by_tag(request, tag: str):
+    """Get blog posts by tag"""
+    return BlogPost.objects.filter(tags__icontains=tag)
 
 
 @api.post("/blog", response=BlogPostOut)

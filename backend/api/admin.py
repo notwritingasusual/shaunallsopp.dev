@@ -4,8 +4,8 @@ from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories, Work
 
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created_at']
-    search_fields = ['title', 'content']
+    list_display = ['title', 'created_at', 'tags']
+    search_fields = ['title', 'content', 'tags']
     readonly_fields = ['created_at']
     list_per_page = 20
 
@@ -26,8 +26,8 @@ class HealthWeightAdmin(admin.ModelAdmin):
 
 @admin.register(Novels)
 class NovelsAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'created_at']
-    search_fields = ['title', 'author', 'description']
+    list_display = ['title', 'genere', 'author', 'created_at']
+    search_fields = ['title', 'genere', 'author', 'description']
     readonly_fields = ['created_at']
     list_per_page = 20
 

@@ -4,6 +4,7 @@ from django.conf import settings
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200) 
+    tags = models.CharField(max_length=200, blank=True)  # Comma-separated tags
     content = models.TextField()
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -45,6 +46,7 @@ class Projects(models.Model):
 
 class Novels(models.Model):
     title = models.CharField(max_length=200)
+    genere = models.CharField(max_length=100, blank=True)
     author = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     cover_image = models.ImageField(upload_to='novel_covers/', blank=True, null=True)
