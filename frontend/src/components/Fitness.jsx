@@ -130,7 +130,7 @@ function Fitness() {
                                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                                 <XAxis
                                     dataKey="date"
-                                    tick={{ fontSize: 12, fontFamily: 'monospace' }}
+                                    tick={{ fontSize: 14, fontFamily: 'monospace' }}
                                     tickFormatter={(date) => {
                                         const d = new Date(date);
                                         return `${d.getMonth() + 1}/${d.getDate()}`;
@@ -138,12 +138,12 @@ function Fitness() {
                                 />
                                 <YAxis
                                     domain={['dataMin - 2', 'dataMax + 2']}
-                                    tick={{ fontSize: 12, fontFamily: 'monospace' }}
+                                    tick={{ fontSize: 14, fontFamily: 'monospace' }}
                                 />
                                 <Tooltip
                                     contentStyle={{
                                         fontFamily: 'monospace',
-                                        fontSize: '12px',
+                                        fontSize: '14px',
                                         border: '1px solid #d1d5db',
                                         borderRadius: '0'
                                     }}
@@ -161,7 +161,7 @@ function Fitness() {
                         </ResponsiveContainer>
                     </div>
 
-                    <div className="text-xs text-gray-500 mt-4">
+                    <div className="text-sm text-gray-500 mt-4">
                         data source: apple health | last updated: {new Date(data[data.length - 1]?.date).toLocaleDateString()}
                     </div>
                 </div>

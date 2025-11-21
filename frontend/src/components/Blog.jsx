@@ -30,8 +30,30 @@ const Blog = () => {
                             <h2 className="font-bold mb-2 text-sm text-[#556B2F]">{post.title}</h2>
                             <p className="font-bold mb-2 text-xs text-[#556B2F]">{new Date(post.created_at).toLocaleDateString()}</p>
                             <p className="whitespace-pre-wrap text-sm leading-snug text-gray-600 mb-2">{post.content}</p>
-                        </div>
 
+
+                            {post.image && (
+                                <img
+                                    src={`${process.env.REACT_APP_API_URL}${post.image}`}
+                                    alt={post.title}
+                                    className="mb-2 max-w-full h-auto"
+                                />
+                            )}
+
+
+                            <div className="text-xs font-mono text-gray-500 mt-3 border-t border-gray-300 pt-2">
+                                <span className="text-xs font-bold font-mono leading-tight text-gray-600 mb-2">tags: </span>
+                                {post.tags && typeof post.tags === 'string' ? (
+                                    post.tags.split(',').map((tag, index) => (
+                                        <Link key={index} to={`/tags/${tag.trim()}`} className="text-xs text-[#556B2F] underline mr-2">
+                                            {tag.trim()}
+                                        </Link>
+                                    ))
+                                ) : (
+                                    <span className="text-sm text-gray-600">No tags</span>
+                                )}
+                            </div>
+                        </div>
                     ))}
                 </div>
             )}
@@ -40,3 +62,8 @@ const Blog = () => {
 };
 
 export default Blog;
+
+
+
+
+

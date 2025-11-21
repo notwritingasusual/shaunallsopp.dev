@@ -8,6 +8,7 @@ import Fitness from './components/Fitness';
 import Writing from './components/Writing';
 import FullJournal from './components/FullJournal';
 import WorkExperience from './components/WorkExperience';
+import TagResults from './components/TagResults';
 
 
 function App() {
@@ -46,8 +47,9 @@ function App() {
           />
           {/* link to full journal entries */}
           <Route path="/FullJournal" element={<FullJournal />} />
+          <Route path="/tags/:tagName" element={<TagResults />} />
         </Routes>
-        {/*-------------------------------------------------------------*/}
+
 
 
         <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-xs text-gray-600">

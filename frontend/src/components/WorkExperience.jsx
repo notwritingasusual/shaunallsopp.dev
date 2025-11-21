@@ -60,14 +60,14 @@ class WorkExperience extends React.Component {
         }
 
         return (
-            <div className="w-full items-startfont-mono p-8">
+            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
                 <h1 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
                 {experiences.length === 0 ? (
-                    <p className="text-base text-sm text-gray-600 mb-2">No work experience available.</p>
+                    <p className="text-sm text-gray-600 mb-2">No work experience available.</p>
                 ) : (
                     <div className="space-y-6">
                         {experiences.map(exp => (
-                            <div key={exp.id} className="border border-gray-300 text-base p-3">
+                            <div key={exp.id} className="border border-gray-300 text-sm p-3">
                                 <div className="mb-3 md:mb-0 md:flex md:items-start ">
                                     {exp.logo ? (
                                         <img src={`${process.env.REACT_APP_API_URL}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />
@@ -77,7 +77,7 @@ class WorkExperience extends React.Component {
                                     <div className="md:flex-grow">
                                         <div className="md:flex md:justify-between md:items-start">
                                             <h2 className="mt-2 md:mt-0 font-bold text-sm text-[#556B2F]">{exp.position} at {exp.company}</h2>
-                                            <p className="mb-2 md:mb-0 font-bold text-xs text-gray-600 md:text-right">
+                                            <p className="mb-2 md:mb-0 font-bold text-sm text-gray-600 md:text-right">
                                                 {new Date(exp.start_date).toLocaleDateString()} - {exp.end_date ? new Date(exp.end_date).toLocaleDateString() : 'Present'}
                                             </p>
                                         </div>
@@ -88,7 +88,7 @@ class WorkExperience extends React.Component {
                                                 )}
                                                 <button
                                                     onClick={() => this.toggleDescription(exp.id)}
-                                                    className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 self-start"
+                                                    className="mt-1 text-sm text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 self-start"
                                                 >
                                                     {exp.showDescription ? '[ - hide details]' : '[ + view details]'}
                                                 </button>

@@ -10,11 +10,16 @@ function ProjectItem({ project }) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
+            <img
+                src={`${process.env.REACT_APP_API_URL}${project.image}`}
+                alt={project.name}
+                className="mb-2 w-40 h-auto"
+            />
             <h2 className="text-sm font-bold mb-2 text-[#556B2F]">{project.name}</h2>
             <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{project.description}</p>
             <p className="text-xs font-bold font-mono leading-tight text-gray-600 mb-2">{project.languages}</p>
             {isHovered && project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="leading-tight text-xs text-blue-600 underline">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="leading-tight text-sm text-blue-600 underline">
                     {project.link}
                 </a>
             )}

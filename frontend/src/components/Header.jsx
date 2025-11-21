@@ -12,7 +12,7 @@ function Header() {
                 className="w-12 h-12 rounded-md object-contain md:w-24 md:h-24 lg:w-28 lg:h-28"
             />
             <div className="flex flex-col ml-4">
-                <h1 className="text-base font-bold font-mono text-[#556B2F]">
+                <h1 className="text-sm font-bold font-mono text-[#556B2F]">
                     <EncryptedText text="shaun" />
                 </h1>
                 <p className="text-sm font-bold text-gray-600 leading-snug">
