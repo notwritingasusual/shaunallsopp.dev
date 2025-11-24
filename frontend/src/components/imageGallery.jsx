@@ -39,11 +39,6 @@ class ImageGallery extends React.Component {
                         </div>
                     ))}
                 </div>
-                <div className="mt-4">
-                    <Link to="/image-gallery" className="block sm:hidden mb-6 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0">
-                        [ + view more images]
-                    </Link>
-                </div>
             </div>
 
         );
