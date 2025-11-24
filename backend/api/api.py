@@ -1,3 +1,4 @@
+from django.db.models import Q
 from ninja import NinjaAPI, Schema, Field
 from typing import List, Optional
 from datetime import datetime, date
@@ -293,8 +294,10 @@ def list_work_experience(request):
 
 @api.get("/search/blog", response=List[BlogPostOut])
 def search_blog(request, q: str):
-    """Search blog posts"""
-    return BlogPost.objects.filter(title__icontains=q)
+    """Search blog posts by title, content, and tags"""
+    return BlogPost.objects.filter(
+        Q(title__icontains=q) | Q(content__icontains=q) | Q(tags__icontains=q)
+    )
 
 @api.get("/image-gallery", response=List[ImageGalleryOut])
 def list_image_gallery(request):

@@ -8,7 +8,7 @@ const TagResults = () => {
 
     React.useEffect(() => {
         if (tagName) {
-            axios.get(`${process.env.REACT_APP_API_URL}/api/blog/tags/${tagName}`)
+            axios.get(`${process.env.REACT_APP_API_URL}/api/tags/${tagName}`)
                 .then(response => {
                     setPosts(response.data);
                 })
@@ -20,7 +20,7 @@ const TagResults = () => {
 
     return (
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
-            <h1 className="text-base font-bold mb-4 text-[#556B2F]">Posts tagged with "{tagName}"</h1>
+            <h1 className="text-base font-bold mb-4 text-[#556B2F]">"{tagName}"</h1>
             {posts.length === 0 ? (
                 <p className="text-base font-mono text-sm text-gray-600 mb-2">No blog posts available for this tag.</p>
             ) : (
