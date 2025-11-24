@@ -2,7 +2,7 @@ from ninja import NinjaAPI, Schema, Field
 from typing import List, Optional
 from datetime import datetime, date
 from django.shortcuts import get_object_or_404
-from .models import BlogPost, HealthWeight, Projects, Novels, ShortStories, WorkExperience
+from .models import BlogPost, HealthWeight, Projects, Novels, ShortStories, WorkExperience, ImageGallery
 
 api = NinjaAPI()
 
@@ -90,6 +90,18 @@ class WorkExperienceOut(Schema):
     position: str
     start_date: date
     end_date: Optional[date]
+    description: Optional[str]
+    created_at: datetime
+
+class ImageGalleryIn(Schema):
+    title: str
+    image: Optional[str] = None
+    description: Optional[str] = None
+
+class ImageGalleryOut(Schema):
+    id: int
+    title: str
+    image: Optional[str]
     description: Optional[str]
     created_at: datetime
 
@@ -279,3 +291,13 @@ def list_work_experience(request):
     """Get all work experience entries"""
     return WorkExperience.objects.all()
 
+@api.get("/search/blog", response=List[BlogPostOut])
+def search_blog(request, q: str):
+    """Search blog posts"""
+    return BlogPost.objects.filter(title__icontains=q)
+
+@api.get("/image-gallery", response=List[ImageGalleryOut])
+def list_image_gallery(request):
+    """Get all image gallery entries"""
+    return ImageGallery.objects.all()
+    

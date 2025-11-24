@@ -9,6 +9,8 @@ import Writing from './components/Writing';
 import FullJournal from './components/FullJournal';
 import WorkExperience from './components/WorkExperience';
 import TagResults from './components/TagResults';
+import ImageGallery from './components/imageGallery.jsx';
+import FullImageGallery from './components/FullImageGallery';
 
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
                   <Blog />
                 </div>
                 <div>
+                  <ImageGallery />
+                </div>
+                <div>
                   <Fitness />
                 </div>
                 <div>
@@ -48,12 +53,14 @@ function App() {
           {/* link to full journal entries */}
           <Route path="/FullJournal" element={<FullJournal />} />
           <Route path="/tags/:tagName" element={<TagResults />} />
+          <Route path="/image-gallery" element={<FullImageGallery />} />
         </Routes>
 
 
 
         <footer className="w-full text-center p-6 mt-10 border-t border-gray-300 font-mono text-xs text-gray-600">
           © {new Date().getFullYear()} Shaun Allsopp. All rights reserved.
+          <p className="mt-2 text-xs">v1.0.1</p>
         </footer>
       </div >
     </Router >

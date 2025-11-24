@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories, WorkExperience
+from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories, WorkExperience, ImageGallery    
 
 
 @admin.register(BlogPost)
@@ -45,3 +45,9 @@ class WorkExperienceAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at']
     list_per_page = 20
 
+@admin.register(ImageGallery)
+class ImageGalleryAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at']
+    search_fields = ['title', 'description']
+    readonly_fields = ['created_at']
+    list_per_page = 20

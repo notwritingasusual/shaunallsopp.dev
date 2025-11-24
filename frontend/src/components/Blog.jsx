@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 const Blog = () => {
     const [posts, setPosts] = React.useState([]);
@@ -18,7 +19,9 @@ const Blog = () => {
     return (
         <div className="w-full items-start font-mono p-8">
             <h1 className="text-base font-bold mb-4 text-[#556B2F]">JOURNAL</h1>
+
             <p className="mb-2 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"><Link to="/FullJournal">[+ view more entries]</Link></p>
+            <Search />
 
             {posts.length === 0 ? (
 
