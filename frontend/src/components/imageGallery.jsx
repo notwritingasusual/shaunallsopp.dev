@@ -32,8 +32,7 @@ class ImageGallery extends React.Component {
                 <div className="md:grid grid-cols-4 gap-4 leading-none mt-4">
                     {this.state.images.slice(0, 4).map(image => (
                         <div key={image.id} className="border p-4 rounded">
-                            <img src={`${process.env.REACT_APP_API_URL}${image.image}`} alt={image.
-                                title} className="w-full h-auto mb-2 border border-[#556B2F]" />
+                            <img src={`${process.env.REACT_APP_API_URL}${image.image}`} alt={image.title} className="w-full h-auto mb-2 border border-[#556B2F]" />
                             <h3 className="text-sm font-bold mb-2 text-[#556B2F]">{image.title}</h3>
                             <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{image.description}</p>
                         </div>

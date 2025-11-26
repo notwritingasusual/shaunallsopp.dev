@@ -69,7 +69,7 @@ IMPORT IMAGES: download media folder on python anywhere - unzip into local proje
 on python anywhere console:
 cd /home/notwritingasusual/shaunallsopp.dev/backend
 create a zip folder:
-zip -r media_backup.zip /media/
+ zip -r media_backup.zip media/
 Download the zip from python anywhere files tab
 unzip the folder 
 replace contents of local media folder with the downloaded media folder contents
