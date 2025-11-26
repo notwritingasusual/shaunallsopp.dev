@@ -44,17 +44,16 @@ class Writing extends React.Component {
 
         if (loading) {
             return (
-                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
-                    <h2 className="text-base font-bold mb-4 text-[#556B2F]">WRITING</h2>
-                    <p className="text-sm text-gray-600">Loading...</p>
-                </div>
+                <div className="w-full items-start font-mono p-8">
+                                            <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WRITING</h2>
+                                            <p className="text-sm text-gray-600">Loading...</p>                </div>
             );
         }
 
         if (error) {
             return (
-                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
-                    <h2 className="text-base font-bold mb-4 text-[#556B2F]">WRITING</h2>
+                <div className="w-full items-start font-mono p-8">
+                    <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WRITING</h2>
                     <p className="text-sm text-red-600">{error}</p>
                 </div>
             );
@@ -62,7 +61,7 @@ class Writing extends React.Component {
 
         return (
             <div className="w-full items-start font-mono p-8">
-                <h2 className="text-base font-bold mb-4 text-[#556B2F]">WRITING</h2>
+                <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WRITING</h2>
                 <h2 className="text-sm font-bold mb-4 text-[#556B2F]">novels</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {this.state.novels.map(novel => (

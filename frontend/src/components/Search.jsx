@@ -13,7 +13,7 @@ const Search = ({ onSearchResults }) => {
         axios.get(`${process.env.REACT_APP_API_URL}/api/search/blog`, { params: { q: query } })
             .then(response => {
                 // Pass the results up to the parent component
-                onSearchResults(response.data);
+                onSearchResults(response.data, query);
                 setLoading(false);
             })
             .catch(error => {
@@ -23,13 +23,20 @@ const Search = ({ onSearchResults }) => {
             });
     };
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
     return (
-        <div className="w-full items-start pb-2 pt-2 font-mono">
+        <div className="w-full items-start pb-2 pt-2 text-sm font-mono">
             <div className="">
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleKeyPress}
                     className="border border-gray-300 w-50 h-6 p-1"
                 />
                 <button

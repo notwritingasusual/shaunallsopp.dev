@@ -43,8 +43,8 @@ class WorkExperience extends React.Component {
 
         if (loading) {
             return (
-                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
-                    <h2 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
+                <div className="w-full items-start font-mono p-8">
+                    <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-gray-600">Loading...</p>
                 </div>
             );
@@ -52,16 +52,16 @@ class WorkExperience extends React.Component {
 
         if (error) {
             return (
-                <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
-                    <h2 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
+                <div className="w-full items-start font-mono p-8">
+                    <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WORK EXPERIENCE</h2>
                     <p className="text-sm text-red-600">{error}</p>
                 </div>
             );
         }
 
         return (
-            <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
-                <h1 className="text-base font-bold mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
+            <div className="w-full items-start font-mono p-8">
+                <h1 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WORK EXPERIENCE</h1>
                 {experiences.length === 0 ? (
                     <p className="text-sm text-gray-600 mb-2">No work experience available.</p>
                 ) : (
@@ -88,7 +88,7 @@ class WorkExperience extends React.Component {
                                                 )}
                                                 <button
                                                     onClick={() => this.toggleDescription(exp.id)}
-                                                    className="mt-1 text-sm text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 self-start"
+                                                    className="mt-1 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0 self-start"
                                                 >
                                                     {exp.showDescription ? '[ - hide details]' : '[ + view details]'}
                                                 </button>
