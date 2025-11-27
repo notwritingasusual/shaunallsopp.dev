@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 
+
 const FullJournal = () => {
     const [posts, setPosts] = React.useState([]);
     const [originalPosts, setOriginalPosts] = React.useState([]);
@@ -64,6 +65,7 @@ const FullJournal = () => {
                 </p>
             ) : (
                 <div className="grid grid-cols-1 gap-4">
+
                     {posts.map(post => (
                         <div key={post.id} className="border border-gray-300 text-sm p-3">
                             <h2 className="font-bold mb-2 text-sm text-[#556B2F]">{highlightText(post.title, searchQuery)}</h2>
@@ -94,6 +96,9 @@ const FullJournal = () => {
                     ))}
                 </div>
             )}
+            <Link to="/new-post" className="fixed bottom-8 right-4 bg-[#556B2F] text-white p-2 rounded-full text-xs font-mono shadow-lg hover:bg-[#445a1f] focus:outline-none">
+                New Post
+            </Link>
         </div>
     );
 };

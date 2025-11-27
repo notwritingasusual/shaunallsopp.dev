@@ -13,7 +13,7 @@ function ProjectItem({ project }) {
             <img
                 src={`${process.env.REACT_APP_API_URL}${project.image}`}
                 alt={project.name}
-                className="mb-2 w-40 h-auto"
+                className="mb-2 w-60 h-auto border border-[#556B2F]"
             />
             <h2 className="text-sm font-bold mb-2 text-[#556B2F]">{project.name}</h2>
             <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{project.description}</p>

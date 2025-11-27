@@ -1,9 +1,23 @@
 from django.db.models import Q
-from ninja import NinjaAPI, Schema, Field
+from ninja import NinjaAPI, Schema, Field, Form, File
+from ninja.files import UploadedFile
+from ninja.security import HttpBearer
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.exceptions import AuthenticationFailed
 from typing import List, Optional
 from datetime import datetime, date
 from django.shortcuts import get_object_or_404
 from .models import BlogPost, HealthWeight, Projects, Novels, ShortStories, WorkExperience, ImageGallery
+
+class JWTAuth(HttpBearer):
+    def authenticate(self, request, token):
+        jwt_auth = JWTAuthentication()
+        try:
+            validated_token = jwt_auth.get_validated_token(token)
+            user = jwt_auth.get_user(validated_token)
+            return user
+        except AuthenticationFailed:
+            return None
 
 api = NinjaAPI()
 
@@ -13,7 +27,6 @@ class BlogPostIn(Schema):
     title: str
     tags: Optional[str] = None
     content: str
-    image: Optional[str] = None
 
 
 class BlogPostOut(Schema):
@@ -125,10 +138,16 @@ def get_blog_posts_by_tag(request, tag: str):
     return BlogPost.objects.filter(tags__icontains=tag)
 
 
-@api.post("/blog", response=BlogPostOut)
-def create_blog_post(request, payload: BlogPostIn):
-    """Create a new blog post"""
-    post = BlogPost.objects.create(**payload.dict())
+@api.post("/blog", auth=JWTAuth(), response=BlogPostOut)
+def create_blog_post(request, payload: BlogPostIn = Form(...), image: UploadedFile = File(None)):
+    """Create a new blog post with an optional image upload"""
+    if not request.user.is_staff:
+        return api.create_response(request, {"detail": "Permission denied"}, status=403)
+    
+    post_data = payload.dict()
+    if image:
+        post_data['image'] = image
+    post = BlogPost.objects.create(**post_data)
     return post
 
 

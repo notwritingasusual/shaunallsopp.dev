@@ -11,6 +11,8 @@ import WorkExperience from './components/WorkExperience';
 import TagResults from './components/TagResults';
 import ImageGallery from './components/imageGallery.jsx';
 import FullImageGallery from './components/FullImageGallery';
+import NewPost from './components/NewPost.jsx';
+
 
 
 function App() {
@@ -50,10 +52,10 @@ function App() {
               </>
             }
           />
-          {/* link to full journal entries */}
           <Route path="/FullJournal" element={<FullJournal />} />
           <Route path="/tags/:tagName" element={<TagResults />} />
           <Route path="/image-gallery" element={<FullImageGallery />} />
+          <Route path="/new-post" element={<NewPost />} />
         </Routes>
 
 
