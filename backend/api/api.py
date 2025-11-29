@@ -34,7 +34,6 @@ api.add_router("/blog", blog_router)
 api.add_router("/projects", project_router)
 api.add_router("/work-experience", work_experience_router)
 api.add_router("/fitness", fitness_router)
-api.add_router("/health-weight", fitness_router)
 api.add_router("/writing", writing_router)
 api.add_router("/image-gallery", image_gallery_router)
 
