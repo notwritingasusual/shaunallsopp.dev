@@ -10,7 +10,7 @@ const Search = ({ onSearchResults }) => {
     const handleSearch = () => {
         setLoading(true);
         setError(null);
-        axios.get(`${process.env.REACT_APP_API_URL}/api/search/blog`, { params: { q: query } })
+        axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search/`, { params: { q: query } })
             .then(response => {
                 // Pass the results up to the parent component
                 onSearchResults(response.data, query);

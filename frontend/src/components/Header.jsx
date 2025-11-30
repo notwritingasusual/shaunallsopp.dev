@@ -17,7 +17,7 @@ function Header() {
                 <p className="text-sm font-bold text-gray-600 leading-snug">
                     <EncryptedText text="Web App Developer & Writer" /> <span className="font-light">East Midlands, UK.</span>
                 </p>
-                <p className="text-sm font-mono text-gray-600 pt-2 leading-snug">
+                <div className="text-sm font-mono text-gray-600 pt-2 leading-snug">
                     Building modern, performant web applications. <p className="text-sm font-mono text-gray-600">
                         <span className="font-bold text-[#556B2F]"><EncryptedText text="Tech Stack: Python:" /></span>Django
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=", MySQL" /></span>,
@@ -27,7 +27,7 @@ function Header() {
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=" HTML5" /></span>;
                         <span className="font-bold text-[#556B2F]"><EncryptedText text=" CSS" /></span>;TailwindCSS.
                     </p>
-                </p>
+                </div>
             </div>
             <div className="flex flex-col items-end space-y-2 ml-4">
                 <div className='hidden md:block'><GetInTouchSide /></div>

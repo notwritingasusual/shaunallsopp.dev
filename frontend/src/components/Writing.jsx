@@ -18,7 +18,7 @@ class Writing extends React.Component {
     }
 
     fetchNovels() {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/novels`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/writing/novels`)
             .then(response => {
                 this.setState({ novels: response.data, loading: false });
             })
@@ -29,7 +29,7 @@ class Writing extends React.Component {
     }
 
     fetchShortStories() {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/shortstories`)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/writing/short-stories`)
             .then(response => {
                 this.setState({ shortStories: response.data });
             })
@@ -45,8 +45,8 @@ class Writing extends React.Component {
         if (loading) {
             return (
                 <div className="w-full items-start font-mono p-8">
-                                            <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WRITING</h2>
-                                            <p className="text-sm text-gray-600">Loading...</p>                </div>
+                    <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WRITING</h2>
+                    <p className="text-sm text-gray-600">Loading...</p>                </div>
             );
         }
 
