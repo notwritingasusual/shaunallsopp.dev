@@ -14,6 +14,7 @@ import ImageGallery from './components/imageGallery.jsx';
 import FullImageGallery from './components/FullImageGallery';
 import NewPost from './components/NewPost.jsx';
 import Login from './components/Login.jsx';
+import ScreenshotsNotes from './components/ScreenshotsNotes.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
                     <ImageGallery />
                   </div>
                   <div>
+                    <ScreenshotsNotes />
+                  </div>
+                  <div>
                     <Fitness />
                   </div>
                   <div>
@@ -58,13 +62,13 @@ function App() {
             <Route path="/FullJournal" element={<FullJournal />} />
             <Route path="/tags/:tagName" element={<TagResults />} />
             <Route path="/image-gallery" element={<FullImageGallery />} />
-            <Route 
-              path="/new-post" 
+            <Route
+              path="/new-post"
               element={
                 <ProtectedRoute>
                   <NewPost />
                 </ProtectedRoute>
-              } 
+              }
             />
           </Routes>
 

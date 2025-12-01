@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import BlogPost, Projects, HealthWeight, Novels, ShortStories, WorkExperience, ImageGallery    
+from .models import (
+    BlogPost, Projects, HealthWeight, Novels, ShortStories, 
+    WorkExperience, ImageGallery, ScreenshotsNotes  
+)
 
 
 @admin.register(BlogPost)
@@ -51,3 +54,10 @@ class ImageGalleryAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description']
     readonly_fields = ['created_at']
     list_per_page = 20
+
+@admin.register(ScreenshotsNotes)
+class ScreenshotsNotesAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created_at']
+    search_fields = ['title', 'description']
+    readonly_fields = ['created_at']
+    list_per_page = 20  

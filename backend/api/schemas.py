@@ -102,3 +102,15 @@ class HealthWeightOut(Schema):
     date: date
     weight: float
     unit: str
+
+class ScreenshotsNotesOut(Schema):
+    id: int
+    title: str
+    description: Optional[str]
+    image: Optional[str]
+    created_at: datetime
+
+class ScreenshotsNotesIn(Schema):
+    title: str
+    description: Optional[str] = None
+    image: Optional[str]
