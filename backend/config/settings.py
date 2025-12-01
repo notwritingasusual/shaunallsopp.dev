@@ -79,7 +79,6 @@ DATABASES = {
 
 
 
-
 # Internationalization
 
 
