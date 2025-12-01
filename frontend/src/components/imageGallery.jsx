@@ -27,7 +27,7 @@ class ImageGallery extends React.Component {
                 <h1 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">IMAGE GALLERY</h1>
                 <div className="mt-4">
                     <Link to="/image-gallery" className="md:mb-6 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0">
-                        [ + view more images]
+                        [+ view more images]
                     </Link>
                 </div>
                 <div className="md:grid grid-cols-4 gap-4 leading-none mt-4">
