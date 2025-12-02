@@ -2,11 +2,11 @@ from ninja import NinjaAPI, File
 from ninja.files import UploadedFile
 from typing import List
 from django.shortcuts import get_object_or_404
-from .models import HealthWeight, Projects, Novels, ShortStories, WorkExperience, ImageGallery, ScreenshotsNotes
+from .models import HealthWeight, Projects, Novels, ShortStories, WorkExperience, ImageGallery, ScreenshotsNotes, FitnessImage
 from .schemas import (
-    ProjectOut, ProjectIn, HealthWeightOut, NovelOut, NovelIn,
+    ProjectOut, ProjectIn, HealthWeightOut, FitnessImageOut, NovelOut, NovelIn,
     ShortStoryOut, ShortStoryIn, WorkExperienceOut, WorkExperienceIn,
-    ImageGalleryOut, ImageGalleryIn, ScreenshotsNotesOut, ScreenshotsNotesIn
+    ImageGallerySchema, ImageGalleryIn, ScreenshotsNotesOut, ScreenshotsNotesIn
 )
 from .blog_api import blog_router
 from .projects_api import project_router

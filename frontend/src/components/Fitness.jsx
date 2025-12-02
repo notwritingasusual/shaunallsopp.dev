@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import FitnessImages from './FitnessImages.jsx';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 function Fitness() {
@@ -124,43 +125,42 @@ function Fitness() {
                     </div>
 
                     {/* Graph */}
-                    <div className="w-full overflow-hidden">
-                        <ResponsiveContainer width="100%" height={300}>
-                            <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-                                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                                <XAxis
-                                    dataKey="date"
-                                    tick={{ fontSize: 14, fontFamily: 'monospace' }}
-                                    tickFormatter={(date) => {
-                                        const d = new Date(date);
-                                        return `${d.getMonth() + 1}/${d.getDate()}`;
-                                    }}
-                                />
-                                <YAxis
-                                    domain={['dataMin - 2', 'dataMax + 2']}
-                                    tick={{ fontSize: 14, fontFamily: 'monospace' }}
-                                />
-                                <Tooltip
-                                    contentStyle={{
-                                        fontFamily: 'monospace',
-                                        fontSize: '14px',
-                                        border: '1px solid #d1d5db',
-                                        borderRadius: '0'
-                                    }}
-                                    labelFormatter={(date) => new Date(date).toLocaleDateString()}
-                                    formatter={(value) => [`${value} kg`, 'weight']}
-                                />
-                                <Line
-                                    type="monotone"
-                                    dataKey="weight"
-                                    stroke="#556B2F"
-                                    strokeWidth={2}
-                                    dot={{ r: 2, fill: '#556B2F' }}
-                                />
-                            </LineChart>
-                        </ResponsiveContainer>
-                    </div>
-
+                                        <div className="w-full overflow-hidden">
+                                            <ResponsiveContainer width="100%" height={300}>
+                                                <LineChart data={data} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+                                                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                                                    <XAxis
+                                                        dataKey="date"
+                                                        tick={{ fontSize: 14, fontFamily: 'monospace' }}
+                                                        tickFormatter={(date) => {
+                                                            const d = new Date(date);
+                                                            return `${d.getMonth() + 1}/${d.getDate()}`;
+                                                        }}
+                                                    />
+                                                    <YAxis
+                                                        domain={['dataMin - 2', 'dataMax + 2']}
+                                                        tick={{ fontSize: 14, fontFamily: 'monospace' }}
+                                                    />
+                                                    <Tooltip
+                                                        contentStyle={{
+                                                            fontFamily: 'monospace',
+                                                            fontSize: '14px',
+                                                            border: '1px solid #d1d5db',
+                                                            borderRadius: '0'
+                                                        }}
+                                                        labelFormatter={(date) => new Date(date).toLocaleDateString()}
+                                                        formatter={(value) => [`${value} kg`, 'weight']}
+                                                    />
+                                                    <Line
+                                                        type="monotone"
+                                                        dataKey="weight"
+                                                        stroke="#556B2F"
+                                                        strokeWidth={2}
+                                                        dot={{ r: 2, fill: '#556B2F' }}
+                                                     />
+                                                </LineChart>
+                                            </ResponsiveContainer>
+                                        </div>
                     <div className="text-sm text-gray-500 mt-4">
                         data source: apple health | last updated: {new Date(data[data.length - 1]?.date).toLocaleDateString()}
                     </div>
@@ -206,17 +206,21 @@ function Fitness() {
                     </div>
 
                     {/* Row 2: Placeholder */}
+
+
                     <div className="border border-gray-300 p-3 break-words overflow-hidden">
-                        <h3 className="text-sm font-bold mb-4 text-[#556B2F]">placeholder</h3>
-                        <p className="text-sm text-gray-600">
-                            This is a placeholder section for future content.
-                        </p>
+                        <div><FitnessImages />
+
+
+
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
         </section>
+
     );
 }
 

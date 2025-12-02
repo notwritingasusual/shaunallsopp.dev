@@ -56,7 +56,7 @@ function Writing() {
         <div className="w-full items-start font-mono p-8">
             <h2 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">WRITING</h2>
             <h2 className="text-sm font-bold mb-4 text-[#556B2F]">novels</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {novels.map(novel => (
                     <div key={novel.id} className="border border-gray-300 p-3 break-words overflow-hidden mb-2">
                         <h3 className="text-sm font-bold mb-2 text-[#556B2F]">{novel.title}</h3>

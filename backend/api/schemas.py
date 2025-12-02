@@ -90,18 +90,44 @@ class ImageGalleryIn(Schema):
     image: Optional[str] = None
     description: Optional[str] = None
 
-class ImageGalleryOut(Schema):
+class ImageGallerySchema(Schema):
     id: int
-    title: str
+    description: str
     image: Optional[str]
-    description: Optional[str]
-    created_at: datetime
+    uploaded_at: datetime
+    tags: Optional[List[str]] = None
+
+    @staticmethod
+    def resolve_image(obj):
+        if obj.image:
+            return obj.image.url
+        return None
+
+    @staticmethod
+    def resolve_tags(obj):
+        return [tag.name for tag in obj.tags.all()]
 
 # Schemas for HealthWeight
 class HealthWeightOut(Schema):
     date: date
     weight: float
     unit: str
+
+class FitnessImageOut(Schema):
+    id: int
+    image: Optional[str]
+    description: Optional[str]
+    uploaded_at: datetime
+
+    @staticmethod
+    def resolve_image(obj):
+        if obj.image:
+            return obj.image.url
+        return None
+    
+class FitnessImageIn(Schema):
+    image: Optional[str] = None
+    description: Optional[str] = None
 
 class ScreenshotsNotesOut(Schema):
     id: int

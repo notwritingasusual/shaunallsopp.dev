@@ -15,7 +15,14 @@ class BlogPost(models.Model):
     class Meta:
         ordering = ['-created_at']
 
+class FitnessImage(models.Model):
+    image = models.ImageField(upload_to='fitness_images/')
+    description = models.TextField(blank=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"Fitness Image {self.id} uploaded at {self.uploaded_at}"
+        
 class HealthWeight(models.Model):
     date = models.DateField(unique=True)
     weight = models.DecimalField(max_digits=5, decimal_places=2)  # e.g., 123.45 kg

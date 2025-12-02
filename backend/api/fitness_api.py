@@ -1,7 +1,7 @@
 from typing import List
 from ninja import Router
-from .models import HealthWeight
-from .schemas import HealthWeightOut
+from .models import HealthWeight, FitnessImage
+from .schemas import HealthWeightOut, FitnessImageOut
 from datetime import datetime, timedelta
 
 fitness_router = Router()
@@ -12,3 +12,9 @@ def get_weight_data(request, days: int = 90):
     cutoff = datetime.now().date() - timedelta(days=days)
     weights = HealthWeight.objects.filter(date__gte=cutoff)
     return weights
+
+@fitness_router.get("/images", response=List[FitnessImageOut])
+def get_fitness_images(request):
+    """Get all fitness images"""
+    images = FitnessImage.objects.all().order_by('-uploaded_at')
+    return images

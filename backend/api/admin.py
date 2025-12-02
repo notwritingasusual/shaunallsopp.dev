@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    BlogPost, Projects, HealthWeight, Novels, ShortStories, 
+    BlogPost, Projects, HealthWeight, FitnessImage, Novels, ShortStories, 
     WorkExperience, ImageGallery, ScreenshotsNotes  
 )
 
@@ -25,6 +25,14 @@ class HealthWeightAdmin(admin.ModelAdmin):
     search_fields = ['date']
     readonly_fields = ['created_at']
     date_hierarchy = 'date'
+    list_per_page = 50
+
+@admin.register(FitnessImage)
+class FitnessImageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'uploaded_at']
+    search_fields = ['description']
+    readonly_fields = ['uploaded_at']
+    date_hierarchy = 'uploaded_at'
     list_per_page = 50
 
 @admin.register(Novels)
