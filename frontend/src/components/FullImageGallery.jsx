@@ -46,7 +46,7 @@ function FullImageGallery() {
             </div>
             <div className="md:grid grid-cols-4 gap-4 leading-none mt-4">
                 {images.map(image => (
-                    <div key={image.id} className="bg-black relative border p-3 rounded transform transition-transform duration-200 hover:rotate-0" style={{ transform: `rotate(${(Math.random() * 4 - 2).toFixed(2)}deg)` }}>
+                    <div key={image.id} className="bg-black relative border p-4 rounded transform transition-transform duration-200 hover:rotate-0" style={{ transform: `rotate(${(Math.random() * 4 - 2).toFixed(2)}deg)` }}>
                         <div className="absolute top-2 right-2">
                             <FeatherIcon icon="paperclip" className="w-5 h-5 text-gray-400" />
                         </div>
