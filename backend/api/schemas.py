@@ -92,20 +92,16 @@ class ImageGalleryIn(Schema):
 
 class ImageGallerySchema(Schema):
     id: int
-    description: str
+    title: str
+    description: Optional[str]
     image: Optional[str]
-    uploaded_at: datetime
-    tags: Optional[List[str]] = None
+    created_at: datetime
 
     @staticmethod
     def resolve_image(obj):
         if obj.image:
             return obj.image.url
         return None
-
-    @staticmethod
-    def resolve_tags(obj):
-        return [tag.name for tag in obj.tags.all()]
 
 # Schemas for HealthWeight
 class HealthWeightOut(Schema):
