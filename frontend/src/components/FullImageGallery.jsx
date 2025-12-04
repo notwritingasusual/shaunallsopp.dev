@@ -50,7 +50,7 @@ function FullImageGallery() {
                         <div className="absolute top-2 right-2">
                             <FeatherIcon icon="paperclip" className="w-5 h-5 text-gray-400" />
                         </div>
-                        <img src={`${process.env.REACT_APP_API_URL}${image.image}`} alt={image.title} className="w-full h-auto mb-2 p-3 pb-7 bg-white border border-[#556B2F]" />
+                        <img src={`${process.env.REACT_APP_API_URL}${image.image}`} alt={image.title} className="w-full h-auto mb-2 p-3 pb-7 bg-black border border-[#556B2F]" />
                         <h3 className="text-sm font-bold mb-2 text-[#556B2F]">{image.title}</h3>
                         <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{image.description}</p>
                     </div>
