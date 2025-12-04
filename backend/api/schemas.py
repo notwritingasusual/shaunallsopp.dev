@@ -16,6 +16,12 @@ class BlogPostOut(Schema):
     image: Optional[str] = None
     created_at: datetime
 
+    @staticmethod
+    def resolve_image(obj):
+        if obj.image:
+            return obj.image.url
+        return None
+
 # Schemas for Project
 class ProjectIn(Schema):
     name: str
@@ -32,6 +38,12 @@ class ProjectOut(Schema):
     link: Optional[str]
     image: Optional[str]
     created_at: datetime
+
+    @staticmethod
+    def resolve_image(obj):
+        if obj.image:
+            return obj.image.url
+        return None
 
 # Schemas for Novel
 class NovelIn(Schema):
@@ -50,6 +62,12 @@ class NovelOut(Schema):
     cover_image: Optional[str]
     created_at: datetime
 
+    @staticmethod
+    def resolve_cover_image(obj):
+        if obj.cover_image:
+            return obj.cover_image.url
+        return None
+
 # Schemas for ShortStory
 class ShortStoryIn(Schema):
     title: str
@@ -64,6 +82,12 @@ class ShortStoryOut(Schema):
     description: Optional[str]
     cover_image: Optional[str]
     created_at: datetime
+
+    @staticmethod
+    def resolve_cover_image(obj):
+        if obj.cover_image:
+            return obj.cover_image.url
+        return None
 
 # Schemas for WorkExperience
 class WorkExperienceIn(Schema):
@@ -83,6 +107,12 @@ class WorkExperienceOut(Schema):
     end_date: Optional[date]
     description: Optional[str]
     created_at: datetime
+
+    @staticmethod
+    def resolve_logo(obj):
+        if obj.logo:
+            return obj.logo.url
+        return None
 
 # Schemas for ImageGallery
 class ImageGalleryIn(Schema):
@@ -132,7 +162,13 @@ class ScreenshotsNotesOut(Schema):
     image: Optional[str]
     created_at: datetime
 
+    @staticmethod
+    def resolve_image(obj):
+        if obj.image:
+            return obj.image.url
+        return None
+
 class ScreenshotsNotesIn(Schema):
     title: str
     description: Optional[str] = None
-    image: Optional[str]
+    image: Optional[str] = None
