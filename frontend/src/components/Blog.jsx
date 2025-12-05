@@ -27,7 +27,7 @@ const Blog = () => {
         <div className="w-full items-start font-mono p-8">
             <h1 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">JOURNAL</h1>
 
-            <p className="mb-4 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"><Link to="/FullJournal">[+ view more entries]</Link></p>
+            <p className="mb-4 text-xs hover:underline focus:outline-none flex-shrink-0"><Link to="/FullJournal">[+ view more entries]</Link></p>
 
             <div className="grid grid-cols-1 gap-4">
                 {postsToRender.map(post => (
@@ -48,7 +48,7 @@ const Blog = () => {
                             <span className="text-xs font-bold font-mono leading-tight text-gray-600 mb-2">tags: </span>
                             {post.tags && typeof post.tags === 'string' ? (
                                 post.tags.split(',').map((tag, index) => (
-                                    <Link key={index} to={`/tags/${tag.trim()}`} className="text-xs text-[#556B2F] underline mr-2">
+                                    <Link key={index} to={`/tags/${tag.trim()}`} className="text-xs underline mr-2">
                                         {tag.trim()}
                                     </Link>
                                 ))

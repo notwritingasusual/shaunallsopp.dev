@@ -42,7 +42,7 @@ function FullImageGallery() {
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-8">
             <h1 className="text-base font-bold mb-4 text-[#556B2F]">IMAGE GALLERY</h1>
             <div className="mt-4">
-                <p className="mb-2 text-xs text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
+                <p className="mb-2 text-xs hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
             </div>
             <div className="md:grid grid-cols-4 gap-4 leading-none mt-4">
                 {images.map(image => (

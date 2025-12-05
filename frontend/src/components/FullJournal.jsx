@@ -55,7 +55,7 @@ const FullJournal = () => {
     return (
         <div className="w-full items-start border-t border-gray-300 font-mono p-8 mt-10">
             <h1 className="text-base font-bold mb-4 text-[#556B2F]">JOURNAL</h1>
-            <p className="mb-2 text-sm text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
+            <p className="mb-2 text-sm hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
 
             <Search onSearchResults={handleSearchResults} />
 
@@ -84,7 +84,7 @@ const FullJournal = () => {
                                 <span className="text-xs font-bold font-mono leading-tight text-gray-600 mb-2">tags: </span>
                                 {post.tags && typeof post.tags === 'string' ? (
                                     post.tags.split(',').map((tag, index) => (
-                                        <Link key={index} to={`/tags/${tag.trim()}`} className="text-xs text-[#556B2F] underline mr-2">
+                                        <Link key={index} to={`/tags/${tag.trim()}`} className="text-xs underline mr-2">
                                             {tag.trim()}
                                         </Link>
                                     ))

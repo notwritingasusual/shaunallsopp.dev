@@ -24,7 +24,7 @@ const Login = () => {
     return (
         <div className="w-full items-start font-mono p-8">
             <h1 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">ADMIN LOGIN</h1>
-            <p className="mb-2 text-sm text-[#556B2F] hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
+            <p className="mb-2 text-sm hover:underline focus:outline-none flex-shrink-0"><Link to="/">{"[<- home]"}</Link></p>
             <form onSubmit={handleSubmit} className="space-y-4 max-w-sm">
                 {error && <p className="text-sm text-red-600">{error}</p>}
                 <div>

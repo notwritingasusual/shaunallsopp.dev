@@ -44,7 +44,7 @@ function HomePage() {
                             <div key={project.id} className="border border-gray-300 p-4">
                                 <h3 className="text-lg font-bold mb-2 text-[#556B2F]">{project.name}</h3>
                                 <p className="text-sm text-gray-600 mb-4">{project.description}</p>
-                                <Link to={`/projects`} className="text-blue-600 hover:underline">View all projects</Link>
+                                <Link to={`/projects`} className="hover:underline">View all projects</Link>
                             </div>
                         ))}
                     </div>
@@ -60,7 +60,7 @@ function HomePage() {
                     <div className="border border-gray-300 p-4">
                         <h3 className="text-lg font-bold mb-2 text-[#556B2F]">{latestPost.title}</h3>
                         <p className="text-sm text-gray-600 mb-4">{latestPost.content.substring(0, 200)}...</p>
-                        <Link to={`/blog`} className="text-blue-600 hover:underline">Read more</Link>
+                        <Link to={`/blog`} className="hover:underline">Read more</Link>
                     </div>
                 ) : (
                     <p>No blog posts found.</p>

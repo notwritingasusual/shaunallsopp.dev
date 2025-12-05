@@ -22,7 +22,7 @@ function ProjectItem({ project }) {
                 <p className="text-sm text-gray-600 whitespace-pre-line leading-snug mb-2">{project.description}</p>
                 <p className="text-xs font-bold font-mono leading-tight text-gray-600 mb-2">{project.languages}</p>
                 {isHovered && project.link && (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="leading-tight text-sm text-blue-600 underline">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="leading-tight text-sm underline">
                         {project.link}
                     </a>
                 )}

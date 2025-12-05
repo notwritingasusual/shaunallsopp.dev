@@ -155,7 +155,7 @@ class NewPost extends React.Component {
                         <button type="submit" className="px-4 py-2 text-[#556B2F] border border-[#556B2F] text-sm font-bold hover:bg-gray-100">
                             CREATE POST
                         </button>
-                        <Link to="/FullJournal" className="text-xs text-[#556B2F] hover:underline">
+                        <Link to="/FullJournal" className="text-xs hover:underline">
                             [ cancel ]
                         </Link>
                     </div>
