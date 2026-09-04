@@ -2,23 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const EncryptedText = ({ text, className = "" }) => {
-    const [displayText, setDisplayText] = useState(text);
+    const [displayText, setDisplayText] = useState(text || '');
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
 
     useEffect(() => {
+        const safeText = text || '';
         let iteration = 0;
         const interval = setInterval(() => {
             setDisplayText(
-                text.split("").map((char, index) => {
+                safeText.split("").map((char, index) => {
                     if (char === " ") return " "; // Preserve spaces
                     if (index < iteration) {
-                        return text[index]; // Show actual character
+                        return safeText[index]; // Show actual character
                     }
                     return characters[Math.floor(Math.random() * characters.length)]; // Random character
                 }).join("")
             );
 
-            if (iteration >= text.length) {
+            if (iteration >= safeText.length) {
                 clearInterval(interval);
             }
 

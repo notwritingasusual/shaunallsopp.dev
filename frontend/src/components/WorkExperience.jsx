@@ -70,7 +70,7 @@ class WorkExperience extends React.Component {
                             <div key={exp.id} className="border border-gray-300 text-sm p-3">
                                 <div className="mb-3 md:mb-0 md:flex md:items-start ">
                                     {exp.logo ? (
-                                        <img src={`${process.env.REACT_APP_API_URL}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />
+                                        <img src={`${process.env.REACT_APP_API_URL.replace('/api', '')}${exp.logo}`} alt={`${exp.company} logo`} className="w-10 h-10 object-contain flex-shrink-0 mr-4" />
                                     ) : (
                                         <div className="w-10 h-10 bg-gray-200 flex-shrink-0 mr-4"></div> // Fallback if no logo
                                     )}

@@ -12,7 +12,7 @@ class ImageGallery extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/image-gallery`)
+        axios.get(`${process.env.REACT_APP_API_URL}/image-gallery`)
             .then(response => {
                 this.setState({ images: response.data });
             })
@@ -37,7 +37,7 @@ class ImageGallery extends React.Component {
                                 <FeatherIcon icon="paperclip" className="w-5 h-5 text-gray-400" />
                             </div>
                             <div className="mb-2 p-3 pb-7 bg-black border border-[#556B2F]">
-                                <img src={`${process.env.REACT_APP_API_URL}${image.image}`} alt={image.title} className="w-full h-auto" />
+                                <img src={`${process.env.REACT_APP_API_URL.replace('/api', '')}${image.image}`} alt={image.title} className="w-full h-auto" />
                             </div>
                             <h3 className="text-sm font-bold mb-2 text-[#556B2F]">{image.title}</h3>
                             <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{image.description}</p>

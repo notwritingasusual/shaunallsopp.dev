@@ -53,7 +53,7 @@ function ScreenshotsNotes() {
                             <FeatherIcon icon="paperclip" className="w-5 h-5 text-gray-400" />
                         </div>
                         <div className="mb-2 p-3 pb-7 bg-black border border-[#556B2F]">
-                            <img src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.title} className="w-full h-auto" />
+                            <img src={`${process.env.REACT_APP_API_URL.replace('/api', '')}${item.image}`} alt={item.description} className="w-full h-auto" />
                         </div>
                         <p className="text-sm text-gray-600 mb-2 leading-tight whitespace-pre-line leading-snug">{item.description}</p>
                     </div>

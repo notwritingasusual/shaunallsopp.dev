@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <div className="App p-0 md:p-[50px] pt-[20px] lg:p-[60px] xl:p-{100px] bg-white max-w-7xl mx-auto">
+        <div className="App p-0 md:p-[50px] pt-[20px] lg:p-[60px] xl:p-[100px] bg-white max-w-7xl mx-auto">
           <Header />
 
           <Routes>

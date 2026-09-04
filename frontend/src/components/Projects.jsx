@@ -39,7 +39,7 @@ function Projects() {
 
     return (
         <div className="w-full items-start font-mono p-8">
-            <h1 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">PROJECTS</h1>
+            <h1 className="text-base font-bold border-t border-gray-300 pt-8 mb-4 text-[#556B2F]">?PROJECTS</h1>
             <div className="grid grid-cols-1 gap-4">
                 {projects.map((project) => (
                     <ProjectItem key={project.id} project={project} />

@@ -11,7 +11,7 @@ class TechStack extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${process.env.REACT_APP_API_URL}/api/tech-stack`)
+        axios.get(`${process.env.REACT_APP_API_URL}/tech-stack`)
             .then(response => {
                 this.setState({ techStack: response.data });
             })
